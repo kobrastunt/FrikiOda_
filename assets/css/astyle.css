@@ -1,0 +1,64 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+}
+
+header {
+    background-color: #333;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+    color: #fff;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.admin-content {
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    padding: 10px 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+/* Estilos específicos */
+.admin-content {
+    background-color: #222;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.admin-content h2 {
+    color: #00f; /* Azul */
+}
+
+nav ul li a:hover {
+    color: #00f; /* Azul */
+}
