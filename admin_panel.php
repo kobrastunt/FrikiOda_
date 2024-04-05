@@ -44,7 +44,7 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION['user_role']) || $_SESSION[
 
     <!-- Pie de página -->
     <footer>
-        <p>&copy; 2024 Your Website</p>
+        <p>&copy; 2024 FrikiOda</p>
     </footer>
 
 </body>

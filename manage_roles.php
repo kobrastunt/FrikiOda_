@@ -78,7 +78,7 @@ $roles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <!-- Pie de página -->
     <footer>
-        <p>&copy; 2024 Your Website</p>
+        <p>&copy; 2024  FrikiOda</p>
     </footer>
 
 </body>
