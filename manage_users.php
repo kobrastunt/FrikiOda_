@@ -22,7 +22,7 @@ if (isset($_GET['delete_id'])) {
 }
 
 // Obtener la lista de usuarios
-$stmt = $conn->query('SELECT id, email FROM users');
+$stmt = $conn->query('SELECT id, email, role_id FROM users');
 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
@@ -58,6 +58,7 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <tr>
                     <th>ID</th>
                     <th>Email</th>
+                    <th>Rol</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -66,8 +67,9 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <tr>
                         <td><?php echo $user['id']; ?></td>
                         <td><?php echo $user['email']; ?></td>
+                        <td><?php echo $user['role_id']; ?></td>
                         <td>
-                            <a href="edit_user.php?id=<?php echo $user['id']; ?>">Edit</a>
+                            <a href="formularioroles.php?id=<?php echo $user['id']; ?>">Edit</a>
                             <a href="manage_users.php?delete_id=<?php echo $user['id']; ?>" onclick="return confirm('Are you sure you want to delete this user?')">Delete</a>
                         </td>
                     </tr>

@@ -1,48 +1,39 @@
-<?php
-session_start();
-
-// Verificar si el usuario está autenticado como administrador
-if (!isset($_SESSION['user_id']) || !isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'admin') {
-    // Si no es un administrador, redirigir a otra página
-    header('Location: index.php');
-    exit;
-}
-
-// Aquí puedes incluir la funcionalidad para gestionar usuarios, roles, contenido, etc.
-
-?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel</title>
+    <title>Modificar_rol</title>
     <link rel="stylesheet" href="assets\css\astyle.css">
 </head>
 <body>
-
     <!-- Encabezado -->
     <header>
-        <h1>Admin Panel</h1>
+        <h1>Manage Users</h1>
         <nav>
             <ul>
                 <li><a href="admin_panel.php">Dashboard</a></li>
                 <li><a href="manage_users.php">Manage Users</a></li>
                 <li><a href="manage_roles.php">Manage Roles</a></li>
-                <li><a href="wiki.php">principal</a></li>
                 <!-- Agrega más enlaces de navegación según sea necesario -->
                 <li><a href="logout.php">Logout</a></li>
             </ul>
         </nav>
     </header>
+    <h2>Modificar Rol de Usuario</h2>
+    <form action="modificar_rol.php" method="post">
+        <label for="user_id">ID de Usuario:</label><br>
+        <input type="text" id="user_id" name="user_id" required><br>
 
-    <!-- Contenido del panel de administrador -->
-    <div class="admin-content">
-        <h2>Welcome, <?php echo $_SESSION['user_email']; ?>!</h2>
-        <!-- Aquí puedes mostrar estadísticas, resúmenes, etc. -->
-    </div>
+        <label for="nuevo_rol">Nuevo Rol:</label><br>
+        <select id="nuevo_rol" name="nuevo_rol" required>
+            <option value="1">Administrador</option>
+            <option value="2">Moderador</option>
+            <option value="3">Usuario</option>
+        </select><br>
 
+        <button type="submit">Modificar Rol</button>
+    </form>
     <!-- Pie de página -->
     <footer>
         <p>&copy; 2024 FrikiOda</p>

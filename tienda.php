@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -27,7 +31,31 @@
             </div>
         </div>
     </header>
-    
+    <div class="formulario">
+        <?php
+                
+                if (!isset($_SESSION['user_id'])) {
+                    // Mostrar el formulario de inicio de sesión solo si el usuario no está autenticado
+            ?>
+            <h2>Iniciar sesión</h2>
+            <form action="login.php" method="POST">
+                <input type="text" name="email" placeholder="Correo electrónico">
+                <input type="password" name="password" placeholder="Contraseña">
+                <input type="submit" value="Iniciar sesión">
+            </form>
+            <span>¿No tienes una cuenta? <a href="signup.php">Regístrate</a></span>
+            <?php
+                } else {
+                    // Si el usuario ya está autenticado, muestra un mensaje de bienvenida y el botón de cierre de sesión
+                    ?>
+                    <h2>¡BIENVENIDO/A <?php echo strtoupper($_SESSION['user_email']); ?>!!!</h2>
+                    <form action="logout.php" method="POST">
+                        <input type="submit" value="Cerrar sesión">
+                    </form>
+                    <?php
+                }
+            ?>
+        </div>
     <div class="container-items">
         <div class="item">
             <figure>
