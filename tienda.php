@@ -30,6 +30,9 @@
                 </div>
             </div>
         </div>
+        <a href="https://wa.me/34667810705/?text=tu%20texto%20personalizado" target="_blank">
+    <img src="imagenes\whatsapp_logo.png" width="70" height="70">
+    </a>
     </header>
     <div class="formulario">
         <?php
@@ -56,6 +59,7 @@
                 }
             ?>
         </div>
+        
     <div class="container-items">
         <div class="item">
             <figure>

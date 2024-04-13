@@ -1,6 +1,6 @@
 body {
-    background-color: #252525;
-    color: #ffffff;
+    background-color: #cbeff4;
+    color: #454adb;
     font-family: Arial, sans-serif;
     margin: 10px;
     padding: 10px;
@@ -19,11 +19,11 @@ h1 {
 }
 
 .seccionportada {
-    background-color: #3036e1;
+    background-color: #d9d9e1;
     text-align: left;
     border-radius: 35px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
-    color: #ffffff;
+    color: #261717;
     margin-bottom: 20px;
     padding: 20px;
     width: fit-content;
@@ -48,7 +48,7 @@ h1 {
 }
 
 .plainlinks a {
-    color: #FFCA2B;
+    color: #2bb8ff;
     text-align: left;
 }
 
@@ -114,6 +114,7 @@ header img {
     color: #ffffff;
     cursor: pointer;
 }
+
 
 .menu {
     text-align: center;

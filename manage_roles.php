@@ -67,8 +67,8 @@ $roles = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <td><?php echo $role['id']; ?></td>
                         <td><?php echo $role['name']; ?></td>
                         <td>
-                            <a href="edit_role.php?id=<?php echo $role['id']; ?>">Edit</a>
-                            <a href="manage_roles.php?delete_id=<?php echo $role['id']; ?>" onclick="return confirm('Are you sure you want to delete this role?')">Delete</a>
+                            <a href="edit_role.php?id=<?php echo $role['id']; ?>"><button>Edit</button></a>
+                            <a href="manage_roles.php?delete_id=<?php echo $role['id']; ?>" onclick="return confirm('Are you sure you want to delete this role?')"><button>Delete</button></a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

@@ -1,6 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
     const btnsAddToCart = document.querySelectorAll('.info-product button');
+    const btnWhatsApp = document.querySelector('a[href="https://wa.me/34667810705/?text=tu%20texto%20personalizado"]');
+    const btnCart = document.querySelector('.container-icon');
+    const containerCartProducts = document.querySelector('.container-cart-products');
     const contadorProductos = document.getElementById('contador-productos');
+
+    const productosEnCarrito = [];
+
+    function crearMensaje() {
+        let mensaje = '¡Hola! Quiero ordenar los siguientes productos:';
+        productosEnCarrito.forEach((producto, index) => {
+            mensaje += `\n${index + 1}. ${producto.nombre} - Precio: ${producto.precio}`;
+            if (producto.talla) {
+                mensaje += ` - Talla: ${producto.talla}`;
+            }
+        });
+        return mensaje;
+    }
 
     function addToCart(event) {
         const producto = event.target.closest('.item');
@@ -8,14 +24,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const precioProducto = producto.querySelector('.info-product .price').textContent;
         const talla = producto.querySelector('.info-product select') ? producto.querySelector('.info-product select').value : '';
 
-        // Verificar si el producto ya está en el carrito
-        const productosEnCarrito = document.querySelectorAll('.titulo-producto-carrito');
-        for (let i = 0; i < productosEnCarrito.length; i++) {
-            if (productosEnCarrito[i].textContent === nombreProducto && productosEnCarrito[i].nextSibling.textContent === 'Talla: ' + talla) {
-                alert('Este producto ya está en el carrito.');
-                return;
-            }
+        const productoExistente = productosEnCarrito.find(item => item.nombre === nombreProducto && item.talla === talla);
+        if (productoExistente) {
+            alert('Este producto ya está en el carrito.');
+            return;
         }
+
+        productosEnCarrito.push({ nombre: nombreProducto, precio: precioProducto, talla: talla });
 
         const nuevoProducto = document.createElement('div');
         nuevoProducto.classList.add('cart-product');
@@ -45,6 +60,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function removeFromCart(event) {
         const producto = event.target.closest('.cart-product');
+        const nombreProducto = producto.querySelector('.titulo-producto-carrito').textContent;
+        const talla = producto.querySelector('.talla-producto-carrito').textContent.replace('Talla: ', '');
+
+        productosEnCarrito.splice(productosEnCarrito.findIndex(item => item.nombre === nombreProducto && item.talla === talla), 1);
+        
         producto.remove();
         contadorProductos.textContent = parseInt(contadorProductos.textContent) - 1;
         calcularTotal();
@@ -66,14 +86,20 @@ document.addEventListener('DOMContentLoaded', function() {
         const totalPagar = document.querySelector('.total-pagar');
         totalPagar.textContent = '€' + total.toFixed(2);
     }
-});
 
-// Código adicional:
+    function actualizarMensajeWhatsApp() {
+        btnWhatsApp.href = `https://wa.me/34667810705/?text=${encodeURIComponent(crearMensaje())}`;
+    }
 
-const btnCart = document.querySelector('.container-icon');
-const containerCartProducts = document.querySelector('.container-cart-products');
-const contadorProductos = document.getElementById('contador-productos');
+    btnWhatsApp.addEventListener('click', function(event) {
+        event.preventDefault();
+        window.open(btnWhatsApp.href, '_blank');
+    });
 
-btnCart.addEventListener('click', () => {
-    containerCartProducts.classList.toggle('hidden-cart');
+    btnCart.addEventListener('click', () => {
+        containerCartProducts.classList.toggle('hidden-cart');
+    });
+
+    // Actualizar el mensaje de WhatsApp cada vez que se modifica el carrito
+    document.addEventListener('click', actualizarMensajeWhatsApp);
 });

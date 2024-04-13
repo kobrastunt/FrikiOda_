@@ -145,9 +145,6 @@ if (!isset($_SESSION['user_id'])) {
             </div>
         </div>
     </div>
-    <a href="formulario.php">
-        <button>añadir personaje</button>
-    </a>
     <br>
     <br>
     <table border="1px">

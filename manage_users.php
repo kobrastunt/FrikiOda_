@@ -69,8 +69,8 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <td><?php echo $user['email']; ?></td>
                         <td><?php echo $user['role_id']; ?></td>
                         <td>
-                            <a href="formularioroles.php?id=<?php echo $user['id']; ?>">Edit</a>
-                            <a href="manage_users.php?delete_id=<?php echo $user['id']; ?>" onclick="return confirm('Are you sure you want to delete this user?')">Delete</a>
+                            <a href="formularioroles.php?id=<?php echo $user['id']; ?>"><button>Edit</button></a>
+                            <a href="manage_users.php?delete_id=<?php echo $user['id']; ?>" onclick="return confirm('Are you sure you want to delete this user?')"><button>Delete</button></a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

@@ -70,7 +70,7 @@
                 }
             ?>
         </div>
-        <audio controls autoplay>
+        <audio controls autoplay style="padding: 22px;">
             <source src="one piece cancion de pelea_VBG3VLthdpg.mp3" type="audio/mpeg">
         </audio>
     </div>
@@ -96,4 +96,7 @@
                                     misteriosas <a href="frutadiablo.php" title="las frutas del diablo">Frutas del Diablo</a> hasta <a href="curiosidades.php" title="curiosidades"> fascinantes curiosidades</a> sobre la serie y una conmovedora biografía del autor.
                                     No te pierdas nuestra exclusiva tienda online con una selección de artículos de alta calidad especialmente para los fans de One Piece.
                                     Descubre, vive y participa en frikioda"</p>
+                                    <a href="https://api.whatsapp.com/send/?phone=34667810705&text&type=phone_number&app_absent=0" class="boton">Ir al enlace</a>
+                                    
+                                    
 </body>
