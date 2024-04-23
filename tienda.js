@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const btnsAddToCart = document.querySelectorAll('.info-product button');
-    const btnWhatsApp = document.querySelector('a[href="https://wa.me/34667810705/?text=tu%20texto%20personalizado"]');
+    const btnWhatsApp = document.querySelector('a[href="https://wa.me/34667810705/?text=Hola,%20Wikioda%20escribo%20para%20realizarle%20la%20siguiente%20pregunta:"]');
     const btnCart = document.querySelector('.container-icon');
     const containerCartProducts = document.querySelector('.container-cart-products');
     const contadorProductos = document.getElementById('contador-productos');

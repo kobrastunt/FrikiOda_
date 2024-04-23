@@ -12,6 +12,35 @@
     <link rel="stylesheet" type="text/css" href="assets\css\tstyle.css"/>
 </head>
 <body>
+    <style>
+body{
+        background-image: url('imagenes/One_Piecee.webp');
+        background-color: #cbeff4(203,239,244, 0,8); /* Ajusta el último valor para cambiar la opacidad */
+        background-blend-mode: overlay;
+        background-size: cover; /* Hace que la imagen cubra todo el área visible */
+        background-repeat: no-repeat; /* Evita que la imagen se repita */
+        }
+        h1 {
+    text-align: center;
+    background-image: url('imagenes/one-piece.webp');
+    background-size: cover;
+    background-position: center;
+    font-size: 30px;
+    color: #333;
+    text-shadow: 
+                -1px -1px 0 #fff,  
+                1px -1px 0 #fff,
+                -1px 1px 0 #fff,
+                1px 1px 0 #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 20px 40px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+        </style>
     <header>
         <h1>Productos One Piece</h1>
         <div class="container-icon">
@@ -30,7 +59,7 @@
                 </div>
             </div>
         </div>
-        <a href="https://wa.me/34667810705/?text=tu%20texto%20personalizado" target="_blank">
+        <a href="https://wa.me/34667810705/?text=Hola,%20Wikioda%20escribo%20para%20realizarle%20la%20siguiente%20pregunta:" target="_blank">
     <img src="imagenes\whatsapp_logo.png" width="70" height="70">
     </a>
     </header>
@@ -110,7 +139,7 @@
         </div>
         <div class="item">
             <figure>
-                <img src="https://kokohai.com/wp-content/uploads/2023/02/descarga__1_-removebg-preview.png" alt="producto" />
+                <img src="imagenes\pantalones-one-piece.png.png" alt="producto" />
             </figure>
             <div class="info-product">
                 <h2>Pantalon Ace </h2>

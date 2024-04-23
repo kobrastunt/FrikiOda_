@@ -10,20 +10,36 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION['user_role']) || $_SESSION[
 
 require 'database.php';
 
-// Operación de eliminación de usuario
+// Operación de eliminación de personaje
 if (isset($_GET['delete_id'])) {
     $delete_id = $_GET['delete_id'];
-    $stmt = $conn->prepare('DELETE FROM users WHERE id = :id');
+    $stmt = $conn->prepare('DELETE FROM personajes WHERE id = :id');
     $stmt->bindParam(':id', $delete_id);
     $stmt->execute();
-    // Redirigir a la página de gestión de usuarios después de eliminar
-    header('Location: manage_users.php');
+    // Redirigir a la página de gestión de personajes después de eliminar
+    header('Location: editar_personajes.php');
     exit;
 }
+// actualizacion de personaje
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+$id = $_POST['id'];
+$nombre = $_POST['nombre'];
+$descripcion = $_POST['descripcion'];
+$imagen = $_POST['imagen'];
 
-// Obtener la lista de usuarios
-$stmt = $conn->query('SELECT id, email, role_id FROM users');
-$users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$sql = "UPDATE personajes SET nombre='$nombre', descripcion='$descripcion', imagen='$imagen' WHERE id=$id";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Registro actualizado con éxito";
+} else {
+    echo "Error al actualizar el registro: " . $conn->error;
+}
+}
+
+
+// Obtener la lista de personajes
+$stmt = $conn->query('SELECT id, nombre, descripcion, imagen FROM personajes');
+$personajes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -31,14 +47,14 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Users</title>
+    <title>Editar Personajes</title>
     <link rel="stylesheet" href="assets\css\astyle.css">
 </head>
 <body>
 
     <!-- Encabezado -->
     <header>
-        <h1>Manage Users</h1>
+        <h1>Editar Personajes</h1>
         <nav>
             <ul>
             <li><a href="admin_panel.php">Dashboard</a></li>
@@ -54,27 +70,29 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </nav>
     </header>
 
-    <!-- Contenido de gestión de usuarios -->
+    <!-- Contenido de gestión de personajes -->
     <div class="admin-content">
-        <h2>Users</h2>
+        <h2>Personajes</h2>
         <table>
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Email</th>
-                    <th>Rol</th>
-                    <th>Actions</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Imagen</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($users as $user): ?>
+                <?php foreach ($personajes as $personaje): ?>
                     <tr>
-                        <td><?php echo $user['id']; ?></td>
-                        <td><?php echo $user['email']; ?></td>
-                        <td><?php echo $user['role_id']; ?></td>
+                        <td><?php echo $personaje['id']; ?></td>
+                        <td><?php echo $personaje['nombre']; ?></td>
+                        <td><?php echo $personaje['descripcion']; ?></td>
+                        <td><img src="<?php echo $personaje['imagen']; ?>" alt="<?php echo $personaje['nombre']; ?>" style="width: 100px;"></td>
                         <td>
-                            <a href="formularioroles.php?id=<?php echo $user['id']; ?>"><button>Edit</button></a>
-                            <a href="manage_users.php?delete_id=<?php echo $user['id']; ?>" onclick="return confirm('Are you sure you want to delete this user?')"><button>Delete</button></a>
+                            <a href="formulario_ep.php?id=<?php echo $personaje['id']; ?>"><button>Editar</button></a>
+                            <a href="editar_personajes.php?delete_id=<?php echo $personaje['id']; ?>" onclick="return confirm('¿Estás seguro de que quieres eliminar este personaje?')"><button>Eliminar</button></a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

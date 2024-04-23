@@ -22,48 +22,46 @@ if (!isset($_SESSION['user_id'])) {
 <style>
     body {
         font-family: Arial, sans-serif;
+        background-image: url('imagenes/One_Piecee.webp');
+        background-color: rgba(203, 239, 244, 1); /* Ajusta el último valor para cambiar la opacidad */
+        background-blend-mode: overlay;
     }
 
-    table {
-        border-collapse: collapse;
-        width: 100%;
-        margin-bottom: 20px;
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
     }
 
-    th, td {
+    .character {
+        width: 30%; /* Ajusta el ancho del cuadro del personaje */
+        margin: 10px;
+        padding: 10px;
+        background-color: #ffffff; /* Color de fondo del cuadro del personaje */
         border: 1px solid #0000FF;
-        text-align: left;
-        padding: 8px;
+        border-radius: 5px;
+        text-align: center;
     }
 
-    td {
-        color: #140b81; /* Color de texto predeterminado */
-    }
-
-    tr:nth-child(odd) td {
-        color: #FF0000; /* Cambia el color de texto para filas impares */
-    }
-
-    th {
-        background-color: #ccccff;
-        color: #333333;
-    }
-
-    tr:nth-child(even) {
-        background-color: #f5f5f5; /* Color de fondo para filas pares */
-    }
-
-    tr:hover {
-        background-color: #ccccff; /* Color de fondo al pasar el ratón */
-    }
-
-    td img {
+    .character img {
         display: block;
-        margin-left: auto;
-        margin-right: auto;
+        margin: 0 auto;
         max-width: 100px;
         height: 120px;
         border-radius: 5px;
+        cursor: pointer; /* Cambia el cursor al hacer hover sobre la imagen */
+    }
+
+    .character img:hover {
+        transform: scale(1.8); /* Aplica un efecto de escala al hacer hover sobre la imagen */
+    }
+
+    .character h3 {
+        color: #140b81; /* Color de texto del nombre */
+    }
+
+    .character p {
+        color: #FF0000; /* Color de texto de la descripción */
     }
 </style>
 
@@ -148,17 +146,18 @@ if (!isset($_SESSION['user_id'])) {
     <br>
     <br>
     <table border="1px">
-        <tr>
-            <th>ID</th>
-            <th>NOMBRE</th>
-            <th>DESCRIPCION</th>
-            <th>IMAGEN</th>
-        </tr>
-        <?php
-        include 'mostrar.php';
-        ?>
-
-    </table>
+    <div class="container">
+    <?php
+    include 'mostrar.php';
+    foreach ($personajes as $personaje) {
+        echo '<div class="character">';
+        echo '<img src="' . $personaje['imagen'] . '" alt="' . $personaje['nombre'] . '">';
+        echo '<h3>' . $personaje['nombre'] . '</h3>';
+        echo '<p>' . $personaje['descripcion'] . '</p>';
+        echo '</div>';
+    }
+    ?>
+</div>
     
 </body>
 <html>

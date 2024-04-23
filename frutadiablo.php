@@ -14,11 +14,65 @@ if (!isset($_SESSION['user_id'])) {
     <meta charset="UTF-8" />
     <title>WikiOda, la enciclopedia de One piece </title>
     <link rel="stylesheet" type="text/css" href="assets\css\pstyle.css" />
+    <style>
+        body{
+            background-image: url('imagenes/One_Piecee.webp');
+    background-color: #cbeff4(255, 255, 255, 1); /* Ajusta el último valor para cambiar la opacidad */
+    background-blend-mode: overlay;
+        }
+    </style>
     <script>
         function principal() {
             window.location.href = "wiki.php";
         }
     </script>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        border: 1px solid #0000FF;
+        text-align: left;
+        padding: 8px;
+    }
+
+    td {
+        color: #140b81; /* Color de texto predeterminado */
+    }
+
+    tr:nth-child(odd) td {
+        color: #FF0000; /* Cambia el color de texto para filas impares */
+    }
+
+    th {
+        background-color: #ccccff;
+        color: #333333;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f5f5f5; /* Color de fondo para filas pares */
+    }
+
+    tr:hover {
+        background-color: #ccccff; /* Color de fondo al pasar el ratón */
+    }
+
+    td img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100px;
+        height: 120px;
+        border-radius: 5px;
+    }
+</style>
 </head>
 
 </head>
@@ -78,16 +132,39 @@ if (!isset($_SESSION['user_id'])) {
                             <div class="mw-parser-output">
                                 <div class="seccionportada">
                                 <div class="tituloprincipal">
-                                        <div><b>Bienvenido/a a FrikiOda</b></div>
-                                        <div>La enciclopedia de One Piece en español</div>
+                                        <div><b>La fascinante sección de las Frutas del Diablo</b></div>
+                                        <div>Que tipo de Fruta del Diablo elegirías tu</div>
                                     </div>
                                     <div class="plainlinks">
-                                    <p>"Bienvenido a Frikioda: Tu aplicación web sobre One Piece.
-                                    Frikioda es el lugar ideal para explorar y disfrutar todo sobre One Piece, la icónica serie de anime y manga del legendario <a href="eichirooda.php" title="autor Eiichiro">Eiichiro Oda</a>.
-                                    Esta aplicación te permitirá explorar el apasionante mundo de One Piece.
-                                    <br></br>
-                                    Frikioda tiene todo lo que necesitas para satisfacer tu pasión por la serie, desde información detallada sobre los <a href="personajes.php" title="personajes"> personajes principales</a> y las 
-                                    misteriosas <a href="frutadiablo.php" title="las frutas del diablo">Frutas del Diablo</a> hasta <a href="curiosidades.php" title="curiosidades"> fascinantes curiosidades</a> sobre la serie y una conmovedora biografía del autor.
-                                    No te pierdas nuestra exclusiva tienda online con una selección de artículos de alta calidad especialmente para los fans de One Piece.
-                                    Descubre, vive y participa en frikioda"</p>
+                                    <p>En el magnífico universo pirata de One Piece, estas frutas son elementos legendarios que otorgan diferentes poderes y habilidades realmente extraordinarias con la condición de pagar un alto precio.
+                                    Quien consume una de estas frutas tiene las desgracia de no poder nadar, algo muy a tener en cuenta si tus aventuras transcurren en un barco surcando los mares del mundo.
+                                    <br>
+                                    Hay Frutas de diferentes tipos con las que puedes adquirir poderes elementales hielo, fuego o otras que pueden manipular la percepcion del espacio/tiempo, convertirte en una bestia animal con una fuerza
+                                    sobrehumana o manipular la propia gravedad.
+                                    y con diferentes habilidades es el lugar ideal para explorar y disfrutar todo sobre One
+                                    "Descubre, vive y participa en frikioda"</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <table border="1px">
+    <tr>
+        <th>ID</th>
+        <th>TIPO</th>
+        <th>NOMBRE</th>
+        <th>DESCRIPCION</th>
+        <th>IMAGEN</th>
+    </tr>
+        <?php
+        include 'mostrarp.php';
+        ?>
+    </table>
+
 </body>

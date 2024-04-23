@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Verificar si la actualización fue exitosa
     if ($sql) {
-        header('Location: formularioroles.php'); // Redireccionar a la página principal
+        header('Location: manage_users.php'); // Redireccionar a la página principal
         exit;
     } else {
         echo "Error al actualizar el rol del usuario: " . mysqli_error($conexion);
@@ -22,3 +22,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Error: El formulario no se ha enviado correctamente.";
 }
 ?>
+

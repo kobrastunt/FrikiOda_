@@ -14,6 +14,13 @@ if (!isset($_SESSION['user_id'])) {
     <meta charset="UTF-8" />
     <title>WikiOda, la enciclopedia de One piece </title>
     <link rel="stylesheet" type="text/css" href="assets\css\pstyle.css" />
+    <style>
+        body{
+            background-image: url('imagenes/One_Piecee.webp');
+    background-color: #cbeff4(255, 255, 255, 1); /* Ajusta el último valor para cambiar la opacidad */
+    background-blend-mode: overlay;
+        }
+    </style>
     <script>
         function principal() {
             window.location.href = "wiki.php";
@@ -76,16 +83,18 @@ if (!isset($_SESSION['user_id'])) {
                             <div class="mw-parser-output">
                                 <div class="seccionportada">
                                 <div class="tituloprincipal">
-                                        <div><b>Bienvenido/a a FrikiOda</b></div>
-                                        <div>La enciclopedia de One Piece en español</div>
+                                        <div><b>Datos curiosos y teorías</b></div>
+                                        <div>Esta información ha sido recabada por nakamas</div>
                                     </div>
                                     <div class="plainlinks">
-                                    <p>"Bienvenido a Frikioda: Tu aplicación web sobre One Piece.
-                                    Frikioda es el lugar ideal para explorar y disfrutar todo sobre One Piece, la icónica serie de anime y manga del legendario <a href="eichirooda.php" title="autor Eiichiro">Eiichiro Oda</a>.
-                                    Esta aplicación te permitirá explorar el apasionante mundo de One Piece.
-                                    <br></br>
-                                    Frikioda tiene todo lo que necesitas para satisfacer tu pasión por la serie, desde información detallada sobre los <a href="personajes.php" title="personajes"> personajes principales</a> y las 
-                                    misteriosas <a href="frutadiablo.php" title="las frutas del diablo">Frutas del Diablo</a> hasta <a href="curiosidades.php" title="curiosidades"> fascinantes curiosidades</a> sobre la serie y una conmovedora biografía del autor.
-                                    No te pierdas nuestra exclusiva tienda online con una selección de artículos de alta calidad especialmente para los fans de One Piece.
-                                    Descubre, vive y participa en frikioda"</p>
+                                    <p>Esta sección nos mostrará los misterios e intringulis de la serie, las más viriopintas teorías que te dejarán sin aliento,
+                                    One Piece, una obra que lleva alegrando nuestros corazones más de 25 años y con más de 1000 capítulos, pero, a que no sabias que
+                                    Eiichiro Oda calculó que la serie duraría 5 años y que conforme iba transcuriendo ese tiempo comprobó que no había argumentado ni 
+                                    la mitad de la trama.
+                                    
+                                    En nuestra sección de tienda tienes también nuestro contacto de whatsapp para escribir tus teorías, ¡ANÍMATE! incluiremos en esta sección 
+                                    las más originales y argumentadas. 
+                                    
+                                    
+
 </body>

@@ -9,6 +9,15 @@
     <meta charset="UTF-8" />
     <title>WikiOda, la enciclopedia de One piece </title>
     <link rel="stylesheet" type="text/css" href="assets\css\pstyle.css"/>
+    <style>
+    body{
+        background-image: url('imagenes/One_Piecee.webp');
+        background-color: #cbeff4(203,239,244, 0,8); /* Ajusta el último valor para cambiar la opacidad */
+        background-blend-mode: overlay;
+        background-size: cover; /* Hace que la imagen cubra todo el área visible */
+        background-repeat: no-repeat; /* Evita que la imagen se repita */
+        }
+    </style>
     <script>
         function principal() {
             window.location.href = "wiki.php";

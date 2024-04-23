@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
 <?php
 session_start();
 
@@ -17,7 +25,7 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION['user_role']) || $_SESSION[
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel</title>
+    <title>Edición</title>
     <link rel="stylesheet" href="assets\css\astyle.css">
     
 </head>
@@ -40,17 +48,19 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION['user_role']) || $_SESSION[
             </ul>
         </nav>
     </header>
+<div class="admin-content">
+    <h2>Welcome, <?php echo $_SESSION['user_email']; ?>!</h2>
+    <!-- Aquí puedes mostrar estadísticas, resúmenes, etc. -->
+    <h2>Añadir Fruta Diablo:</h2>
 
-    <!-- Contenido del panel de administrador -->
-    <div class="admin-content">
-        <h2>Welcome, <?php echo $_SESSION['user_email']; ?>!</h2>
-        <!-- Aquí puedes mostrar estadísticas, resúmenes, etc. -->
-        <h2>Añadir personaje:</h2>
-
-        <!-- Formulario para insertar personajes -->
-        <form action="insertar.php" enctype="multipart/form-data" method="POST" style="margin-top: 20px;">
+    <!-- Formulario para insertar frutas diablo -->
+    <form action="insertar_frutadiablo.php" enctype="multipart/form-data" method="POST" style="margin-top: 20px;">
         <div style="margin-bottom: 10px;">
-            <label for="nombre" style="display: block; font-weight: bold;">Nombre del personaje:</label>
+            <label for="tipo" style="display: block; font-weight: bold;">Tipo de Fruta Diablo:</label>
+            <input type="text" id="tipo" name="tipo" required style="width: 50%; padding: 8px; border-radius: 5px; border: 1px solid #ccc;">
+        </div>
+        <div style="margin-bottom: 10px;">
+            <label for="nombre" style="display: block; font-weight: bold;">Nombre de la Fruta Diablo:</label>
             <input type="text" id="nombre" name="nombre" required style="width: 50%; padding: 8px; border-radius: 5px; border: 1px solid #ccc;">
         </div>
         <div style="margin-bottom: 10px;">
@@ -63,13 +73,7 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION['user_role']) || $_SESSION[
         </div>
         <button type="submit" name="registrar" style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">Registrar</button>
     </form>
-    
-    </div>
-
-    <!-- Pie de página -->
-    <footer>
-        <p>&copy; 2024 FrikiOda</p>
-    </footer>
+</div>
 
 </body>
 </html>

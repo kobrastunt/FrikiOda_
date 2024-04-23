@@ -14,6 +14,13 @@ if (!isset($_SESSION['user_id'])) {
     <meta charset="UTF-8" />
     <title>WikiOda, la enciclopedia de One piece </title>
     <link rel="stylesheet" type="text/css" href="assets\css\pstyle.css" />
+    <style>
+        body{
+            background-image: url('imagenes/One_Piecee.webp');
+    background-color: #cbeff4(255, 255, 255, 1); /* Ajusta el último valor para cambiar la opacidad */
+    background-blend-mode: overlay;
+        }
+    </style>
     <script>
         function principal() {
             window.location.href = "wiki.php";
@@ -71,7 +78,7 @@ if (!isset($_SESSION['user_id'])) {
                 <div id="content" class="mw-body" role="main">
                     <a id="top"></a>
                     <h1 id="firstHeading" class="firstHeading mw-first-heading"><span
-                            class="mw-page-title-main">Eichiiro Oda</span></h1>
+                            class="mw-page-title-main">Eiichiro Oda</span></h1>
                     <div id="bodyContent" class="monobook-body">
                         <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="es" dir="ltr">
                             <div class="mw-parser-output">
