@@ -26,51 +26,53 @@ if (!isset($_SESSION['user_id'])) {
             window.location.href = "wiki.php";
         }
     </script>
-    <style>
+<style>
     body {
         font-family: Arial, sans-serif;
+        background-image: url('imagenes/One_Piecee.webp');
+        background-color: rgba(203, 239, 244, 1); /* Ajusta el último valor para cambiar la opacidad */
+        background-blend-mode: overlay;
     }
 
-    table {
-        border-collapse: collapse;
-        width: 100%;
-        margin-bottom: 20px;
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
     }
 
-    th, td {
+    .character {
+        width: 30%; /* Ajusta el ancho del cuadro del personaje */
+        margin: 10px;
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 0.8);
+        background-blend-mode: overlay;/* Color de fondo del cuadro del personaje */
         border: 1px solid #0000FF;
-        text-align: left;
-        padding: 8px;
+        border-radius: 75px;
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.9);
+        text-align: center;
     }
 
-    td {
-        color: #140b81; /* Color de texto predeterminado */
-    }
-
-    tr:nth-child(odd) td {
-        color: #FF0000; /* Cambia el color de texto para filas impares */
-    }
-
-    th {
-        background-color: #ccccff;
-        color: #333333;
-    }
-
-    tr:nth-child(even) {
-        background-color: #f5f5f5; /* Color de fondo para filas pares */
-    }
-
-    tr:hover {
-        background-color: #ccccff; /* Color de fondo al pasar el ratón */
-    }
-
-    td img {
+    .character img {
         display: block;
-        margin-left: auto;
-        margin-right: auto;
+        margin: 0 auto;
         max-width: 100px;
         height: 120px;
         border-radius: 5px;
+        cursor: pointer; /* Cambia el cursor al hacer hover sobre la imagen */
+    }
+
+    .character img:hover {
+        transform: scale(1.8); /* Aplica un efecto de escala al hacer hover sobre la imagen */
+    }
+    .character h2 {
+        color: rgba(29, 227, 187); /* Color de texto del nombre */
+    }
+    .character h3 {
+        color: #140b81; /* Color de texto del nombre */
+    }
+
+    .character p {
+        color: #000000; /* Color de texto de la descripción */
     }
 </style>
 </head>
@@ -140,9 +142,7 @@ if (!isset($_SESSION['user_id'])) {
                                     Quien consume una de estas frutas tiene las desgracia de no poder nadar, algo muy a tener en cuenta si tus aventuras transcurren en un barco surcando los mares del mundo.
                                     <br>
                                     Hay Frutas de diferentes tipos con las que puedes adquirir poderes elementales hielo, fuego o otras que pueden manipular la percepcion del espacio/tiempo, convertirte en una bestia animal con una fuerza
-                                    sobrehumana o manipular la propia gravedad.
-                                    y con diferentes habilidades es el lugar ideal para explorar y disfrutar todo sobre One
-                                    "Descubre, vive y participa en frikioda"</p>
+                                    sobrehumana o manipular la propia gravedad.</p>
                                     </div>
                                 </div>
                             </div>
@@ -155,16 +155,18 @@ if (!isset($_SESSION['user_id'])) {
     <br>
     <br>
     <table border="1px">
-    <tr>
-        <th>ID</th>
-        <th>TIPO</th>
-        <th>NOMBRE</th>
-        <th>DESCRIPCION</th>
-        <th>IMAGEN</th>
-    </tr>
-        <?php
-        include 'mostrarp.php';
-        ?>
-    </table>
+    <div class="container">
+    <?php
+    include 'mostrarp.php';
+    foreach ($frutadiablo as $frutasdiablo) {
+        echo '<div class="character">';
+        echo '<img src="' . $frutasdiablo['imagen'] . '" alt="' . $frutasdiablo['nombre'] . '">';
+        echo '<h2>' . $frutasdiablo['tipo'] . '</h3>';
+        echo '<h3>' . $frutasdiablo['nombre'] . '</h3>';
+        echo '<p>' . $frutasdiablo['descripcion'] . '</p>';
+        echo '</div>';
+    }
+    ?>
+</div>
 
 </body>

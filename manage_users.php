@@ -48,6 +48,7 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <li><a href="edicion.php">characters create</a></li>
                 <li><a href="ediciondf.php">devil fruit create</a></li>
                 <li><a href="editar_personajes.php">characters editing</a></li>
+                <li><a href="editar_frutas.php">Fruit editing</a></li>
                 <!-- Agrega más enlaces de navegación según sea necesario -->
                 <li><a href="logout.php">Logout</a></li>
             </ul>

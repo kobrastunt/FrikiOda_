@@ -43,6 +43,7 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION['user_role']) || $_SESSION[
                 <li><a href="edicion.php">characters create</a></li>
                 <li><a href="ediciondf.php">devil fruit create</a></li>
                 <li><a href="editar_personajes.php">characters editing</a></li>
+                <li><a href="editar_frutas.php">Fruit editing</a></li>
                 <!-- Agrega más enlaces de navegación según sea necesario -->
                 <li><a href="logout.php">Logout</a></li>
             </ul>
@@ -74,6 +75,10 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION['user_role']) || $_SESSION[
         <button type="submit" name="registrar" style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">Registrar</button>
     </form>
 </div>
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 FrikiOda</p>
+    </footer>
 
 </body>
 </html>
