@@ -2,7 +2,7 @@
 session_start();
 if (!isset($_SESSION['user_id'])) {
     echo "<script>alert('Inicia sesión para acceder, por favor');</script>";
-    echo "<script>window.location.href = 'wiki.php';</script>";
+    echo "<script>window.location.href = 'index.php';</script>";
     exit();
 }
 ?>
@@ -16,8 +16,8 @@ if (!isset($_SESSION['user_id'])) {
     <link rel="stylesheet" type="text/css" href="assets\css\pstyle.css" />
     <style>
         body{
-            background-image: url('imagenes/oda.jpg');
-            background-color: #cbeff4(255, 255, 255, 1); /* Ajusta el último valor para cambiar la opacidad */
+            background-image: url('imagenes/eiichiro.jpg');
+            background-color: rgba(203, 239, 244, 1); /* Ajusta el último valor para cambiar la opacidad */
             background-blend-mode: overlay;
             background-size: cover; /* Hace que la imagen cubra todo el área visible */
             background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -25,7 +25,7 @@ if (!isset($_SESSION['user_id'])) {
     </style>
     <script>
         function principal() {
-            window.location.href = "wiki.php";
+            window.location.href = "index.php";
         }
     </script>
 </head>

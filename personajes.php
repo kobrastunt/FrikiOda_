@@ -2,7 +2,7 @@
 session_start();
 if (!isset($_SESSION['user_id'])) {
     echo "<script>alert('Inicia sesión para acceder, por favor');</script>";
-    echo "<script>window.location.href = 'wiki.php';</script>";
+    echo "<script>window.location.href = 'index.php';</script>";
     exit();
 }
 ?>
@@ -16,7 +16,7 @@ if (!isset($_SESSION['user_id'])) {
     <link rel="stylesheet" type="text/css" href="assets\css\pstyle.css"/>
     <script>
         function principal() {
-            window.location.href = "wiki.php";
+            window.location.href = "index.php";
         }
     </script>
     <style>

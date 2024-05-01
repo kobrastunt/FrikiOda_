@@ -42,7 +42,7 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
             if ($_SESSION['user_role'] == 'admin') {
                 header("Location: admin_panel.php");
             } elseif ($_SESSION['user_role'] == 'editor' || $_SESSION['user_role'] == 'viewer') {
-                header("Location: wiki.php");
+                header("Location: index.php");
             } else {
                 header("Location: viewer_panel.php");
             }

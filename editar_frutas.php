@@ -4,7 +4,7 @@ session_start();
 // Verificar si el usuario está autenticado como administrador
 if (!isset($_SESSION['user_id']) || !isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'admin') {
     // Si no es un administrador, redirigir a otra página
-    header('Location: index.php');
+    header('Location: acceso.php');
     exit;
 }
 
@@ -72,7 +72,7 @@ $frutas = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <li><a href="admin_panel.php">Dashboard</a></li>
                 <li><a href="manage_users.php">Manage Users</a></li>
                 <li><a href="manage_roles.php">Manage Roles</a></li>
-                <li><a href="wiki.php">Principal</a></li>
+                <li><a href="index.php">Principal</a></li>
                 <li><a href="edicion.php">Characters Create</a></li>
                 <li><a href="ediciondf.php">Devil Fruit Create</a></li>
                 <li><a href="editar_personajes.php">Characters Editing</a></li>

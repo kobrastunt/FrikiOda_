@@ -12,7 +12,7 @@ session_start();
 // Verificar si el usuario está autenticado como administrador
 if (!isset($_SESSION['user_id']) || !isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'admin') {
     // Si no es un administrador, redirigir a otra página
-    header('Location: index.php');
+    header('Location: acceso.php');
     exit;
 }
 
@@ -39,7 +39,7 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION['user_role']) || $_SESSION[
             <li><a href="admin_panel.php">Dashboard</a></li>
                 <li><a href="manage_users.php">Manage Users</a></li>
                 <li><a href="manage_roles.php">Manage Roles</a></li>
-                <li><a href="wiki.php">principal</a></li>
+                <li><a href="index.php">principal</a></li>
                 <li><a href="edicion.php">characters create</a></li>
                 <li><a href="ediciondf.php">devil fruit create</a></li>
                 <li><a href="editar_personajes.php">characters editing</a></li>

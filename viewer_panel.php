@@ -73,7 +73,7 @@ session_start();
         <p>Gracias por registrarte en nuestra aplicación web. Tu cuenta ha sido creada con éxito.</p>
         <p>Tu cuenta será revisada y autorizada próximamente por nuestro equipo. Una vez que tu cuenta sea aprobada, podrás acceder a todas las características de nuestra aplicación.</p>
         <p>Mientras tanto, si tienes alguna pregunta o necesitas ayuda, no dudes en <a href="contacto.html">contactarnos</a>.</p>
-        <p><a href="wiki.php" class="button">Volver a la página principal</a></p>
+        <p><a href="index.php" class="button">Volver a la página principal</a></p>
     </div>
 </body>
 

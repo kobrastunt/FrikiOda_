@@ -2,7 +2,7 @@
 session_start();
 if (!isset($_SESSION['user_id'])) {
     echo "<script>alert('Inicia sesión para acceder, por favor');</script>";
-    echo "<script>window.location.href = 'wiki.php';</script>";
+    echo "<script>window.location.href = 'index.php';</script>";
     exit();
 }
 ?>
@@ -23,7 +23,7 @@ if (!isset($_SESSION['user_id'])) {
     </style>
     <script>
         function principal() {
-            window.location.href = "wiki.php";
+            window.location.href = "index.php";
         }
     </script>
 <style>
@@ -43,16 +43,16 @@ if (!isset($_SESSION['user_id'])) {
     }
 
     .character {
-        width: 30%; /* Ajusta el ancho del cuadro del personaje */
-        margin: 10px;
-        padding: 10px;
-        background-color: rgba(255, 255, 255, 0.8);
-        background-blend-mode: overlay;/* Color de fondo del cuadro del personaje */
-        border: 1px solid #0000FF;
-        border-radius: 75px;
-        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.9);
-        text-align: center;
-    }
+            position: relative;
+            width: 30%;
+            margin: 10px;
+            padding: 10px;
+            background-color: #ffffff;
+            border: 1px solid #0000FF;
+            border-radius: 5px;
+            text-align: center;
+            overflow: hidden;
+        }
 
     .character img {
         display: block;
@@ -64,7 +64,7 @@ if (!isset($_SESSION['user_id'])) {
     }
 
     .character img:hover {
-        transform: scale(1.8); /* Aplica un efecto de escala al hacer hover sobre la imagen */
+        transform: scale(1.2); /* Aplica un efecto de escala al hacer hover sobre la imagen */
     }
     .character h2 {
         color: rgba(29, 227, 187); /* Color de texto del nombre */

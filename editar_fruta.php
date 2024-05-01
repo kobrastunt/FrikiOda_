@@ -4,7 +4,7 @@ session_start();
 // Verificar si el usuario está autenticado como administrador
 if (!isset($_SESSION['user_id']) || !isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'admin') {
     // Si no es un administrador, redirigir a otra página
-    header('Location: index.php');
+    header('Location: acceso.php');
     exit;
 }
 
