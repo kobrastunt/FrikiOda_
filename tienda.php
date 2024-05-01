@@ -14,7 +14,7 @@
 <body>
     <style>
 body{
-        background-image: url('imagenes/One_Piecee.webp');
+        background-image: url('imagenes/mugiwara-store.jpg');
         background-color: #cbeff4(203,239,244, 0,8); /* Ajusta el último valor para cambiar la opacidad */
         background-blend-mode: overlay;
         background-size: cover; /* Hace que la imagen cubra todo el área visible */

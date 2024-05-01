@@ -16,9 +16,11 @@ if (!isset($_SESSION['user_id'])) {
     <link rel="stylesheet" type="text/css" href="assets\css\pstyle.css" />
     <style>
         body{
-            background-image: url('imagenes/One_Piecee.webp');
-    background-color: #cbeff4(255, 255, 255, 1); /* Ajusta el último valor para cambiar la opacidad */
-    background-blend-mode: overlay;
+            background-image: url('imagenes/oda.jpg');
+            background-color: #cbeff4(255, 255, 255, 1); /* Ajusta el último valor para cambiar la opacidad */
+            background-blend-mode: overlay;
+            background-size: cover; /* Hace que la imagen cubra todo el área visible */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
         }
     </style>
     <script>

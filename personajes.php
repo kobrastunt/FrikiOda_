@@ -22,9 +22,11 @@ if (!isset($_SESSION['user_id'])) {
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url('imagenes/One_Piecee.webp');
+            background-image: url('imagenes/one-piece.webp');
             background-color: rgba(203, 239, 244, 1);
             background-blend-mode: overlay;
+            background-size: contain; /* Hace que la imagen cubra todo el área visible */
+            /* background-repeat: no-repeat; Evita que la imagen se repita */
         }
 
         .container {
@@ -139,18 +141,17 @@ if (!isset($_SESSION['user_id'])) {
                             <div class="mw-parser-output">
                                 <div class="seccionportada">
                                     <div class="tituloprincipal">
-                                        <div><b>Bienvenido/a a FrikiOda</b></div>
-                                        <div>La enciclopedia de One Piece en español</div>
+                                        <div><b>¡¡¡ Conozcamos a los Mugiwaras !!!</b></div>
+                                        <div>La tripulación de los Sombreros de Paja</div>
                                     </div>
                                     <div class="plainlinks">
-                                        <p>"Bienvenido a Frikioda: Tu aplicación web sobre One Piece.
-                                            Frikioda es el lugar ideal para explorar y disfrutar todo sobre One Piece, la icónica serie de anime y manga del legendario <a href="eichirooda.php" title="autor Eiichiro">Eiichiro Oda</a>.
-                                            Esta aplicación te permitirá explorar el apasionante mundo de One Piece.
-                                            <br></br>
-                                            Frikioda tiene todo lo que necesitas para satisfacer tu pasión por la serie, desde información detallada sobre los <a href="personajes.php" title="personajes"> personajes principales</a> y las 
-                                            misteriosas <a href="frutadiablo.php" title="las frutas del diablo">Frutas del Diablo</a> hasta <a href="curiosidades.php" title="curiosidades"> fascinantes curiosidades</a> sobre la serie y una conmovedora biografía del autor.
-                                            No te pierdas nuestra exclusiva tienda online con una selección de artículos de alta calidad especialmente para los fans de One Piece.
-                                            Descubre, vive y participa en frikioda"</p>
+                                        <p>"En esta emocionante sección presentaremos a los famosos piratas capitaneados por nuestro personaje favorito Monkey D. Luffy.
+                                            Cada uno de los personajes del anime tienen su proposito personal, contribuyendo conjuntamente entre ellos y complementando
+                                            sus caracteristicas y habilidades.
+                                            La tripulación dispone de un capitán, un francotirador, un espadachín, una navegante, un cocinero, un médico, una arqueóloga,
+                                            un constructor y un músico, sin olvidar el medio de transporte que utilizan nuestros protagonistas haciendo un homenaje al Queen Merry.
+
+                                        </p>
                                     </div>
                                 </div>
                             </div>

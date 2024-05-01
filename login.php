@@ -7,6 +7,13 @@ if (isset($_SESSION['user_id'])) {
     exit; // Asegurarse de que se detiene la ejecución del script después de la redirección
 }
 
+if (!empty($_POST['email']) && !empty($_POST['password'])) {
+    // Tu código para verificar las credenciales del usuario
+} else {
+    $message = 'Please enter valid email and password';
+}
+
+
 require 'database.php';
 
 if (!empty($_POST['email']) && !empty($_POST['password'])) {
@@ -15,7 +22,8 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
     $records->execute();
     $results = $records->fetch(PDO::FETCH_ASSOC);
 
-    if (count($results) > 0 && password_verify($_POST['password'], $results['password'])) {
+    if ($results && count($results) > 0 && password_verify($_POST['password'], $results['password'])) {
+
         // Ahora, vamos a obtener el nombre del rol del usuario
         $role_records = $conn->prepare('SELECT name FROM roles WHERE id = :role_id');
         $role_records->bindParam(':role_id', $results['role_id']);

@@ -29,9 +29,11 @@ if (!isset($_SESSION['user_id'])) {
 <style>
     body {
         font-family: Arial, sans-serif;
-        background-image: url('imagenes/One_Piecee.webp');
+        background-image: url('imagenes/One-piece-frutas-del-diablo.webp');
         background-color: rgba(203, 239, 244, 1); /* Ajusta el último valor para cambiar la opacidad */
         background-blend-mode: overlay;
+        background-size: cover; /* Hace que la imagen cubra todo el área visible */
+        background-repeat: no-repeat; /* Evita que la imagen se repita */
     }
 
     .container {
@@ -135,7 +137,7 @@ if (!isset($_SESSION['user_id'])) {
                                 <div class="seccionportada">
                                 <div class="tituloprincipal">
                                         <div><b>La fascinante sección de las Frutas del Diablo</b></div>
-                                        <div>Que tipo de Fruta del Diablo elegirías tu</div>
+                                        <div>¿Que tipo de Fruta del Diablo elegirías tú?</div>
                                     </div>
                                     <div class="plainlinks">
                                     <p>En el magnífico universo pirata de One Piece, estas frutas son elementos legendarios que otorgan diferentes poderes y habilidades realmente extraordinarias con la condición de pagar un alto precio.

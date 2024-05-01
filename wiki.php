@@ -89,7 +89,7 @@
                 <div id="content" class="mw-body" role="main">
                     <a id="top"></a>
                     <h1 id="firstHeading" class="firstHeading mw-first-heading"><span
-                            class="mw-page-title-main">FRIKIODA</span></h1>
+                            class="">FRIKIODA</span></h1>
                             
                                 <div class="seccionportada">
                                     <div class="tituloprincipal">
@@ -102,7 +102,7 @@
                                     Esta aplicación te permitirá explorar el apasionante mundo de One Piece.
                                     <br></br>
                                     Frikioda tiene todo lo que necesitas para satisfacer tu pasión por la serie, desde información detallada sobre los <a href="personajes.php" title="personajes"> personajes principales</a> y las 
-                                    misteriosas <a href="frutadiablo.php" title="las frutas del diablo">Frutas del Diablo</a> hasta <a href="curiosidades.php" title="curiosidades"> fascinantes curiosidades</a> sobre la serie y una conmovedora biografía del autor.
+                                    misteriosas <?php if(isset($_SESSION['user_role'])) { ?><a href="frutadiablo.php" title="las frutas del diablo">Frutas del Diablo<?php } else { ?>Fruta del diablo<?php } ?></a> hasta <a href="curiosidades.php" title="curiosidades"> fascinantes curiosidades</a> sobre la serie y una conmovedora biografía del autor.
                                     No te pierdas nuestra exclusiva tienda online con una selección de artículos de alta calidad especialmente para los fans de One Piece.
                                     Descubre, vive y participa en frikioda"</p>
                                     <a href="https://api.whatsapp.com/send/?phone=34667810705&text&type=phone_number&app_absent=0" class="boton">Ir al enlace</a>
