@@ -1,9 +1,12 @@
 <?php
 
 session_start();
+
 if (isset($_SESSION['user_id'])) {
     header('Location: /php-login');
+    exit; // Asegurarse de que se detiene la ejecución del script después de la redirección
 }
+
 require 'database.php';
 
 if (!empty($_POST['email']) && !empty($_POST['password'])) {
@@ -11,8 +14,6 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
     $records->bindParam(':email', $_POST['email']);
     $records->execute();
     $results = $records->fetch(PDO::FETCH_ASSOC);
-
-    $message = '';
 
     if (count($results) > 0 && password_verify($_POST['password'], $results['password'])) {
         // Ahora, vamos a obtener el nombre del rol del usuario
@@ -24,15 +25,21 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
         // Almacenamos el ID del usuario y el correo electrónico en la sesión
         $_SESSION['user_id'] = $results['id'];
         $_SESSION['user_email'] = $results['email'];
-        // Almacenamos el nombre del rol del usuario en la sesión
-        $_SESSION['user_role'] = $role_results['name'];
 
-        // Redirigir a la página correspondiente según el rol del usuario
-        if ($_SESSION['user_role'] == 'admin') {
-            header("Location: admin_panel.php");
-        } elseif ($_SESSION['user_role'] == 'editor') {
-            header("Location: editor_panel.php");
+        if ($results['role_id']) {
+            // Si el usuario tiene un rol asignado, almacenamos el nombre del rol del usuario en la sesión
+            $_SESSION['user_role'] = $role_results['name'];
+            
+            // Redirigir a la página correspondiente según el rol del usuario
+            if ($_SESSION['user_role'] == 'admin') {
+                header("Location: admin_panel.php");
+            } elseif ($_SESSION['user_role'] == 'editor' || $_SESSION['user_role'] == 'viewer') {
+                header("Location: wiki.php");
+            } else {
+                header("Location: viewer_panel.php");
+            }
         } else {
+            // Si el usuario no tiene un rol asignado, redirigirlo a una página de autorización
             header("Location: viewer_panel.php");
         }
     } else {

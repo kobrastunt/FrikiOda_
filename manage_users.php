@@ -22,7 +22,7 @@ if (isset($_GET['delete_id'])) {
 }
 
 // Obtener la lista de usuarios
-$stmt = $conn->query('SELECT id, email FROM users');
+$stmt = $conn->query('SELECT id, email, role_id FROM users');
 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
@@ -41,9 +41,14 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <h1>Manage Users</h1>
         <nav>
             <ul>
-                <li><a href="admin_panel.php">Dashboard</a></li>
+            <li><a href="admin_panel.php">Dashboard</a></li>
                 <li><a href="manage_users.php">Manage Users</a></li>
                 <li><a href="manage_roles.php">Manage Roles</a></li>
+                <li><a href="wiki.php">principal</a></li>
+                <li><a href="edicion.php">characters create</a></li>
+                <li><a href="ediciondf.php">devil fruit create</a></li>
+                <li><a href="editar_personajes.php">characters editing</a></li>
+                <li><a href="editar_frutas.php">Fruit editing</a></li>
                 <!-- Agrega más enlaces de navegación según sea necesario -->
                 <li><a href="logout.php">Logout</a></li>
             </ul>
@@ -58,6 +63,7 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <tr>
                     <th>ID</th>
                     <th>Email</th>
+                    <th>Rol</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -66,9 +72,10 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <tr>
                         <td><?php echo $user['id']; ?></td>
                         <td><?php echo $user['email']; ?></td>
+                        <td><?php echo $user['role_id']; ?></td>
                         <td>
-                            <a href="edit_user.php?id=<?php echo $user['id']; ?>">Edit</a>
-                            <a href="manage_users.php?delete_id=<?php echo $user['id']; ?>" onclick="return confirm('Are you sure you want to delete this user?')">Delete</a>
+                            <a href="formularioroles.php?id=<?php echo $user['id']; ?>"><button>Edit</button></a>
+                            <a href="manage_users.php?delete_id=<?php echo $user['id']; ?>" onclick="return confirm('Are you sure you want to delete this user?')"><button>Delete</button></a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

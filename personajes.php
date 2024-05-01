@@ -19,53 +19,69 @@ if (!isset($_SESSION['user_id'])) {
             window.location.href = "wiki.php";
         }
     </script>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-    }
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('imagenes/One_Piecee.webp');
+            background-color: rgba(203, 239, 244, 1);
+            background-blend-mode: overlay;
+        }
 
-    table {
-        border-collapse: collapse;
-        width: 100%;
-        margin-bottom: 20px;
-    }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
 
-    th, td {
-        border: 1px solid #0000FF;
-        text-align: left;
-        padding: 8px;
-    }
+        .character {
+            position: relative;
+            width: 30%;
+            margin: 10px;
+            padding: 10px;
+            background-color: #ffffff;
+            border: 1px solid #0000FF;
+            border-radius: 5px;
+            text-align: center;
+            overflow: hidden;
+        }
 
-    td {
-        color: #140b81; /* Color de texto predeterminado */
-    }
+        .character img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100px;
+            height: 120px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
 
-    tr:nth-child(odd) td {
-        color: #FF0000; /* Cambia el color de texto para filas impares */
-    }
+        .character .gif {
+            position: absolute;
+            top: 30%; /* Centra verticalmente */
+            left: 50%; /* Centra horizontalmente */
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 0; /* Empezamos con opacidad 0 para que no se muestre */
+            transition: opacity 0.3s ease; /* Agregamos una transición de opacidad */
+        }
 
-    th {
-        background-color: #ccccff;
-        color: #333333;
-    }
+        .character:hover img {
+            opacity: 0; /* Ocultamos la imagen al hacer hover */
+        }
 
-    tr:nth-child(even) {
-        background-color: #f5f5f5; /* Color de fondo para filas pares */
-    }
+        .character:hover .gif {
+            opacity: 1; /* Al hacer hover, cambiamos la opacidad a 1 para mostrar el GIF */
+        }
 
-    tr:hover {
-        background-color: #ccccff; /* Color de fondo al pasar el ratón */
-    }
+        .character h3 {
+            color: #140b81;
+            margin: 5px 0;
+        }
 
-    td img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 100px;
-        height: 120px;
-        border-radius: 5px;
-    }
-</style>
+        .character p {
+            color: #000000;
+            margin: 5px 0;
+        }
+    </style>
 
 </head>
 
@@ -86,32 +102,31 @@ if (!isset($_SESSION['user_id'])) {
 
     <div class="columna-izquierda">
         <div class="formulario">
-        <?php
-                
-                if (!isset($_SESSION['user_id'])) {
-                    // Mostrar el formulario de inicio de sesión solo si el usuario no está autenticado
-            ?>
-            <h2>Iniciar sesión</h2>
-            <form action="login.php" method="POST">
-                <input type="text" name="email" placeholder="Correo electrónico">
-                <input type="password" name="password" placeholder="Contraseña">
-                <input type="submit" value="Iniciar sesión">
-            </form>
-            <span>¿No tienes una cuenta? <a href="signup.php">Regístrate</a></span>
             <?php
-                } else {
-                    // Si el usuario ya está autenticado, muestra un mensaje de bienvenida y el botón de cierre de sesión
-                    ?>
-                    <h2>¡BIENVENIDO/A <?php echo strtoupper($_SESSION['user_email']); ?>!!!</h2>
-                    <form action="logout.php" method="POST">
-                        <input type="submit" value="Cerrar sesión">
-                    </form>
-                    <?php
-                }
+            if (!isset($_SESSION['user_id'])) {
+                // Mostrar el formulario de inicio de sesión solo si el usuario no está autenticado
+                ?>
+                <h2>Iniciar sesión</h2>
+                <form action="login.php" method="POST">
+                    <input type="text" name="email" placeholder="Correo electrónico">
+                    <input type="password" name="password" placeholder="Contraseña">
+                    <input type="submit" value="Iniciar sesión">
+                </form>
+                <span>¿No tienes una cuenta? <a href="signup.php">Regístrate</a></span>
+                <?php
+            } else {
+                // Si el usuario ya está autenticado, muestra un mensaje de bienvenida y el botón de cierre de sesión
+                ?>
+                <h2>¡BIENVENIDO/A <?php echo strtoupper($_SESSION['user_email']); ?>!!!</h2>
+                <form action="logout.php" method="POST">
+                    <input type="submit" value="Cerrar sesión">
+                </form>
+                <?php
+            }
             ?>
         </div>
     </div>
-    
+
     <div class="plainlinks">
         <div id="globalWrapper">
             <div id="column-content">
@@ -124,39 +139,18 @@ if (!isset($_SESSION['user_id'])) {
                             <div class="mw-parser-output">
                                 <div class="seccionportada">
                                     <div class="tituloprincipal">
-                                        <div><b>Bienvenido a WikiOda</b></div>
+                                        <div><b>Bienvenido/a a FrikiOda</b></div>
                                         <div>La enciclopedia de One Piece en español</div>
-                                        <div><a href="/wiki/WikiDex:WikiDex_ya_no_forma_parte_de_FANDOOM"
-                                                title="WikiDex:WikiDex ya no forma parte de FANDOOM"
-                                                style="color: #FFCA2B;">Voy a ser el
-                                                pr&oacute;ximo rey de los piratas</a>
-                                        </div>
                                     </div>
                                     <div class="plainlinks">
-                                        <p><b><a href="wiki.php" title="Wikioda:Acerca de"
-                                                    style="color: #FFCA2B;">WikiOda</a></b>
-                                            aquí iran todos los personajes que aparecen en la serie <a href="/wiki/Pok%C3%A9mon" title="Pokémon"
-                                                style="color: #FFCA2B;">One
-                                                piece</a> con especial atención a los nakamas del pirata luffy y<b><a href="/wiki/Especial:Estad%C3%ADsticas"
-                                                    title="Especial:Estadísticas" style="color: #FFCA2B;">todos los
-                                                    personajes de tu serie de anime
-                                                    favorita, luffy, zoro, namy, chopper,
-                                                    usuf, sanji ,,,</a></b> artículos, que
-                                            abarca toda
-                                            la información oficial de los <a href="/wiki/Videojuegos"
-                                                title="Videojuegos" style="color: #FFCA2B;">videojuegos</a>, <a
-                                                href="/wiki/Anime" title="Anime" style="color: #FFCA2B;">anime</a>, <a
-                                                href="/wiki/Manga" title="Manga" style="color: #FFCA2B;">manga</a> y <a
-                                                href="/wiki/Juego_de_Cartas_Coleccionables_Pok%C3%A9mon"
-                                                title="Juego de Cartas Coleccionables Pokémon"
-                                                style="color: #FFCA2B;">Juego
-                                                de Cartas Coleccionables</a>.</p>
-                                        <p>Tú también puedes <a href="/wiki/WikiDex:C%C3%B3mo_colaborar"
-                                                title="WikiDex:Cómo colaborar" style="color: #FFCA2B;">colaborar con
-                                                nosotros</a> corrigiendo o ampliando el
-                                            contenido. Para información básica
-                                            sobre cómo editar en un wiki, puedes consultar
-                                            nuestras
+                                        <p>"Bienvenido a Frikioda: Tu aplicación web sobre One Piece.
+                                            Frikioda es el lugar ideal para explorar y disfrutar todo sobre One Piece, la icónica serie de anime y manga del legendario <a href="eichirooda.php" title="autor Eiichiro">Eiichiro Oda</a>.
+                                            Esta aplicación te permitirá explorar el apasionante mundo de One Piece.
+                                            <br></br>
+                                            Frikioda tiene todo lo que necesitas para satisfacer tu pasión por la serie, desde información detallada sobre los <a href="personajes.php" title="personajes"> personajes principales</a> y las 
+                                            misteriosas <a href="frutadiablo.php" title="las frutas del diablo">Frutas del Diablo</a> hasta <a href="curiosidades.php" title="curiosidades"> fascinantes curiosidades</a> sobre la serie y una conmovedora biografía del autor.
+                                            No te pierdas nuestra exclusiva tienda online con una selección de artículos de alta calidad especialmente para los fans de One Piece.
+                                            Descubre, vive y participa en frikioda"</p>
                                     </div>
                                 </div>
                             </div>
@@ -166,23 +160,23 @@ if (!isset($_SESSION['user_id'])) {
             </div>
         </div>
     </div>
-    <a href="formulario.php">
-        <button>añadir personaje</button>
-    </a>
-    <br>
-    <br>
-    <table border="1px">
-        <tr>
-            <th>ID</th>
-            <th>NOMBRE</th>
-            <th>DESCRIPCION</th>
-            <th>IMAGEN</th>
-        </tr>
+
+    <div class="container">
+        <!-- Contenedor de personajes -->
         <?php
         include 'mostrar.php';
+        foreach ($personajes as $personaje) {
+            ?>
+            <div class="character">
+                <img src="<?php echo $personaje['imagen']; ?>" alt="<?php echo $personaje['nombre']; ?>">
+                <img class="gif" src="<?php echo $personaje['gif']; ?>" alt="<?php echo $personaje['nombre']; ?>">
+                <h3><?php echo $personaje['nombre']; ?></h3>
+                <p><?php echo $personaje['descripcion']; ?></p>
+            </div>
+            <?php
+        }
         ?>
-
-    </table>
+    </div>
     
 </body>
-<html>
+</html>

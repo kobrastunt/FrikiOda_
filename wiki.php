@@ -9,6 +9,15 @@
     <meta charset="UTF-8" />
     <title>WikiOda, la enciclopedia de One piece </title>
     <link rel="stylesheet" type="text/css" href="assets\css\pstyle.css"/>
+    <style>
+    body{
+        background-image: url('imagenes/One_Piecee.webp');
+        background-color: #cbeff4(203,239,244, 0,8); /* Ajusta el último valor para cambiar la opacidad */
+        background-blend-mode: overlay;
+        background-size: cover; /* Hace que la imagen cubra todo el área visible */
+        background-repeat: no-repeat; /* Evita que la imagen se repita */
+        }
+    </style>
     <script>
         function principal() {
             window.location.href = "wiki.php";
@@ -23,13 +32,13 @@
 
     <div class="menu">
         <ul>
-            <li><a href="personajes.php" style="background-image: url('imagenes/one-piece.webp')">Personajes</a></li>
-            <li><a href="frutadiablo.php" style="background-image: url('imagenes/One-piece-frutas-del-diablo.webp')">Fruta del diablo</a></li>
-            <li><a href="curiosidades.php" style="background-image: url('imagenes/curiosidades.jpg')">Curiosidades</a></li>
-            <li><a href="eichirooda.php" style="background-image: url('imagenes/oda.jpg')">Eiichirō Oda</a></li>
-            <li><a href="tienda.php" style="background-image: url('imagenes/mugiwara-store.jpg')">Tienda Online</a></li>
-            <?php if (isset($_SESSION['user_id'])): ?>
-            <?php endif; ?>
+        
+            <li><?php if(isset($_SESSION['user_role'])) { ?><a href="personajes.php" style="background-image: url('imagenes/one-piece.webp')">Personajes</a><?php } else { ?>Personajes<?php } ?></li>
+            <li><?php if(isset($_SESSION['user_role'])) { ?><a href="frutadiablo.php" style="background-image: url('imagenes/One-piece-frutas-del-diablo.webp')">Fruta del diablo</a><?php } else { ?>Fruta del diablo<?php } ?></li>
+            <li><?php if(isset($_SESSION['user_role'])) { ?><a href="curiosidades.php" style="background-image: url('imagenes/curiosidades.jpg')">Curiosidades</a><?php } else { ?>Curiosidades<?php } ?></li>
+            <li><?php if(isset($_SESSION['user_role'])) { ?><a href="eichirooda.php" style="background-image: url('imagenes/oda.jpg')">Eiichirō Oda</a><?php } else { ?>Eiichirō Oda<?php } ?></li>
+            <li><?php if(isset($_SESSION['user_role'])) { ?><a href="tienda.php" style="background-image: url('imagenes/mugiwara-store.jpg')">Tienda Online</a><?php } else { ?>Tienda Online<?php } ?></li>
+            
         </ul>
     </div>
 
@@ -49,17 +58,28 @@
             <span>¿No tienes una cuenta? <a href="signup.php">Regístrate</a></span>
             <?php
                 } else {
-                    // Si el usuario ya está autenticado, muestra un mensaje de bienvenida y el botón de cierre de sesión
-                    ?>
-                    <h2>¡BIENVENIDO/A <?php echo strtoupper($_SESSION['user_email']); ?>!!!</h2>
-                    <form action="logout.php" method="POST">
+                    // Si el usuario ya está autenticado, verificar si tiene un rol asignado
+                    if (isset($_SESSION['user_role'])) {
+                        // Si el usuario tiene un rol asignado, mostrar el contenido de la página
+                        ?>
+                        <h2>¡BIENVENIDO/A <?php echo strtoupper($_SESSION['user_email']); ?>!!!</h2>
+                        <!-- Aquí va el contenido de la página -->
+                        <form action="logout.php" method="POST">
                         <input type="submit" value="Cerrar sesión">
-                    </form>
-                    <?php
+                        <?php
+                    } else {
+                        // Si el usuario no tiene un rol asignado, mostrar un mensaje de advertencia
+                        ?>
+                        <h2>¡BIENVENIDO/A <?php echo strtoupper($_SESSION['user_email']); ?>!!!</h2>
+                        <form action="logout.php" method="POST">
+                        <input type="submit" value="Cerrar sesión">
+                        <p>Lo sentimos, no tienes permiso para acceder al contenido de esta página. Por favor, espera a que un administrador te asigne un rol.</p>
+                        <?php
+                    }
                 }
             ?>
         </div>
-        <audio controls autoplay>
+        <audio controls autoplay style="padding: 22px;">
             <source src="one piece cancion de pelea_VBG3VLthdpg.mp3" type="audio/mpeg">
         </audio>
     </div>
@@ -85,5 +105,7 @@
                                     misteriosas <a href="frutadiablo.php" title="las frutas del diablo">Frutas del Diablo</a> hasta <a href="curiosidades.php" title="curiosidades"> fascinantes curiosidades</a> sobre la serie y una conmovedora biografía del autor.
                                     No te pierdas nuestra exclusiva tienda online con una selección de artículos de alta calidad especialmente para los fans de One Piece.
                                     Descubre, vive y participa en frikioda"</p>
+                                    <a href="https://api.whatsapp.com/send/?phone=34667810705&text&type=phone_number&app_absent=0" class="boton">Ir al enlace</a>
+                                    
+                                    
 </body>
-

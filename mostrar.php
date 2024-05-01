@@ -1,18 +1,19 @@
 <?php
-include 'conexion.php' ; 
+include 'conexion.php'; 
 
-$mostrar="SELECT * FROM personajes";
-$sql=mysqli_query($conexion, $mostrar);
-while ($ver=mysqli_fetch_array($sql)) {
-    ?>
-    <tr>
-        <td><?php echo $ver['id'];?></td>
-        <td><?php echo $ver['nombre'];?></td>
-        <td><?php echo $ver['descripcion'];?></td>
-        <td><img src="<?php echo $ver['imagen'];?>" alt=""></td>
-    </tr>    
+$mostrar = "SELECT nombre, descripcion, imagen, gif FROM personajes"; // Modificamos la consulta para incluir la columna gif
+$sql = mysqli_query($conexion, $mostrar);
+$personajes = array(); // Inicializamos un array para almacenar los personajes
 
-<?php
+while ($ver = mysqli_fetch_array($sql)) {
+    // Almacenamos cada fila de la consulta en un array asociativo
+    $personaje = array(
+        'nombre' => $ver['nombre'],
+        'descripcion' => $ver['descripcion'],
+        'imagen' => $ver['imagen'],
+        'gif' => $ver['gif'] // Agregamos la URL del GIF al array del personaje
+    );
+    // Agregamos el array del personaje al array de personajes
+    $personajes[] = $personaje;
 }
-
 ?>

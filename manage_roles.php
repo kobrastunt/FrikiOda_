@@ -41,9 +41,14 @@ $roles = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <h1>Manage Roles</h1>
         <nav>
             <ul>
-                <li><a href="admin_panel.php">Dashboard</a></li>
+            <li><a href="admin_panel.php">Dashboard</a></li>
                 <li><a href="manage_users.php">Manage Users</a></li>
                 <li><a href="manage_roles.php">Manage Roles</a></li>
+                <li><a href="wiki.php">principal</a></li>
+                <li><a href="edicion.php">characters create</a></li>
+                <li><a href="ediciondf.php">devil fruit create</a></li>
+                <li><a href="editar_personajes.php">characters editing</a></li>
+                <li><a href="editar_frutas.php">Fruit editing</a></li>
                 <!-- Agrega más enlaces de navegación según sea necesario -->
                 <li><a href="logout.php">Logout</a></li>
             </ul>
@@ -67,8 +72,8 @@ $roles = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <td><?php echo $role['id']; ?></td>
                         <td><?php echo $role['name']; ?></td>
                         <td>
-                            <a href="edit_role.php?id=<?php echo $role['id']; ?>">Edit</a>
-                            <a href="manage_roles.php?delete_id=<?php echo $role['id']; ?>" onclick="return confirm('Are you sure you want to delete this role?')">Delete</a>
+                            <a href="edit_role.php?id=<?php echo $role['id']; ?>"><button>Edit</button></a>
+                            <a href="manage_roles.php?delete_id=<?php echo $role['id']; ?>" onclick="return confirm('Are you sure you want to delete this role?')"><button>Delete</button></a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

@@ -14,6 +14,13 @@ if (!isset($_SESSION['user_id'])) {
     <meta charset="UTF-8" />
     <title>WikiOda, la enciclopedia de One piece </title>
     <link rel="stylesheet" type="text/css" href="assets\css\pstyle.css" />
+    <style>
+        body{
+            background-image: url('imagenes/One_Piecee.webp');
+    background-color: #cbeff4(255, 255, 255, 1); /* Ajusta el último valor para cambiar la opacidad */
+    background-blend-mode: overlay;
+        }
+    </style>
     <script>
         function principal() {
             window.location.href = "wiki.php";
@@ -75,39 +82,19 @@ if (!isset($_SESSION['user_id'])) {
                         <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="es" dir="ltr">
                             <div class="mw-parser-output">
                                 <div class="seccionportada">
-                                    <div class="tituloprincipal">
-                                        <div><b>Bienvenido a WikiOda</b></div>
-                                        <div>La enciclopedia de One Piece en español</div>
-                                        <div><a href="personajes.html"
-                                                title="WikiDex:WikiDex ya no forma parte de FANDOOM"
-                                                style="color: #FFCA2B;">Voy a ser el
-                                                pr&oacute;ximo rey de los piratas</a>
-                                        </div>
+                                <div class="tituloprincipal">
+                                        <div><b>Datos curiosos y teorías</b></div>
+                                        <div>Esta información ha sido recabada por nakamas</div>
                                     </div>
                                     <div class="plainlinks">
-                                        <p><b><a href="/wiki/WikiDex:Acerca_de" title="WikiDex:Acerca de"
-                                                    style="color: #FFCA2B;">WikiOda</a></b>
-                                            aquí iran todas las frutas que aparecen en la serie <a
-                                                href="/wiki/Pok%C3%A9mon" title="Pokémon" style="color: #FFCA2B;">One
-                                                piece</a> con especial atención a los nakamas del pirata luffy y<b><a
-                                                    href="/wiki/Especial:Estad%C3%ADsticas"
-                                                    title="Especial:Estadísticas" style="color: #FFCA2B;">todos los
-                                                    personajes de tu serie de anime
-                                                    favorita, luffy, zoro, namy, chopper,
-                                                    usuf, sanji ,,,</a></b> artículos, que
-                                            abarca toda
-                                            la información oficial de los <a href="/wiki/Videojuegos"
-                                                title="Videojuegos" style="color: #FFCA2B;">videojuegos</a>, <a
-                                                href="/wiki/Anime" title="Anime" style="color: #FFCA2B;">anime</a>, <a
-                                                href="/wiki/Manga" title="Manga" style="color: #FFCA2B;">manga</a> y <a
-                                                href="/wiki/Juego_de_Cartas_Coleccionables_Pok%C3%A9mon"
-                                                title="Juego de Cartas Coleccionables Pokémon"
-                                                style="color: #FFCA2B;">Juego
-                                                de Cartas Coleccionables</a>.</p>
-                                        <p>Tú también puedes <a href="/wiki/WikiDex:C%C3%B3mo_colaborar"
-                                                title="WikiDex:Cómo colaborar" style="color: #FFCA2B;">colaborar con
-                                                nosotros</a> corrigiendo o ampliando el
-                                            contenido. Para información básica
-                                            sobre cómo editar en un wiki, puedes consultar
-                                            nuestras
+                                    <p>Esta sección nos mostrará los misterios e intringulis de la serie, las más viriopintas teorías que te dejarán sin aliento,
+                                    One Piece, una obra que lleva alegrando nuestros corazones más de 25 años y con más de 1000 capítulos, pero, a que no sabias que
+                                    Eiichiro Oda calculó que la serie duraría 5 años y que conforme iba transcuriendo ese tiempo comprobó que no había argumentado ni 
+                                    la mitad de la trama.
+                                    
+                                    En nuestra sección de tienda tienes también nuestro contacto de whatsapp para escribir tus teorías, ¡ANÍMATE! incluiremos en esta sección 
+                                    las más originales y argumentadas. 
+                                    
+                                    
+
 </body>

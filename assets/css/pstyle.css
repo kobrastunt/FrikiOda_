@@ -1,9 +1,9 @@
 body {
-    background-color: #252525;
-    color: #ffffff;
+    background-color: #cbeff4;
+    color: #454adb;
     font-family: Arial, sans-serif;
-    margin: 10;
-    padding: 10;
+    margin: 10px;
+    padding: 10px;
 }
 
 #content {
@@ -19,17 +19,19 @@ h1 {
 }
 
 .seccionportada {
-    background-color: #3036e1;
+    background-color: rgba(29, 227, 187, 0.3);
+    background-blend-mode: overlay;
     text-align: left;
     border-radius: 35px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
-    color: #ffffff;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.9);
+    color: #261717;
     margin-bottom: 20px;
     padding: 20px;
     width: fit-content;
     margin-left: 25px;
     margin-right: auto;
 }
+
 .tituloprincipal {
     font-size: 28px;
     text-align: auto;
@@ -39,15 +41,15 @@ h1 {
 .plainlinks {
     font-size: 17px;
     line-height: 1.4;
-    text-align: center; /* Alineamos el texto al centro */
+    text-align: center;
 }
 
 .plainlinks p {
-    text-align: left; /* Alineamos el texto del párrafo a la izquierda */
+    text-align: left;
 }
 
 .plainlinks a {
-    color: #FFCA2B;
+    color: #2b2bc1;
     text-align: left;
 }
 
@@ -58,46 +60,37 @@ h1 {
     padding: 0px;
 }
 
-/* Estilos para el diseño de columnas */
 .columna-izquierda {
     float: left;
     width: 30%;
     margin-top: -80px;
-    /* Ajusta el ancho según sea necesario */
 }
 
 .columna-derecha {
     float: left;
     width: 70%;
-    /* Ajusta el ancho según sea necesario */
 }
 
-/* Estilos para el contenido */
 .contenedor {
     margin: 20px;
-    /* Margen alrededor del contenido */
 }
 
 header {
     background-color: #252525;
-    /* Color de fondo */
-    /* padding: 30px; */
     text-align: center;
 }
 
 header img {
-    /* max-width: 50%; */
-    /* Ajusta el tamaño máximo de la imagen */
     width: 60%;
     height: 200px;
+    max-width: 100%;
+    
 }
 
 .formulario {
-
     float: left;
     width: 60%;
-    /* Reduce el ancho para hacerlos más pequeños */
-    background-color: #fff;
+    background-color: rgba(29, 227, 187, 0.3);
     border-radius: 20px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
     color: #000;
@@ -106,14 +99,12 @@ header img {
     margin-right: 10px;
     margin-left: 15px;
     margin-top: 205px;
-    /* Añade margen entre los formularios */
 }
 
 .formulario input[type="text"],
 .formulario input[type="password"],
 .formulario input[type="submit"] {
     width: calc(100% - 22px);
-    /* Ajusta el ancho para compensar el padding */
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
@@ -126,14 +117,17 @@ header img {
     cursor: pointer;
 }
 
+
 .menu {
-    text-align: center;
+    max-width: 1000px; /* Ancho máximo del menú */
+    margin: 0 auto; /* Centrar horizontalmente */
+    text-align: center; /* Alinear el texto al centro */
 }
 
 .menu li {
     display: inline-block;
     margin-right: 10px;
-
+    vertical-align: top;
 }
 
 .menu a {
@@ -142,21 +136,53 @@ header img {
     font-weight: bold;
     color: #FF0000;
     text-shadow: 1px 1px 0px rgb(14, 67, 210), -1px -1px 0px rgb(13, 6, 109), 1px -1px 0px rgb(25, 14, 120), -1px 1px 0px rgb(18, 25, 118);
-    border-radius: 65px;
+    border-radius: 10px;
     transition: background-color 0.3s ease;
     background-size: cover;
-    /* Ajusta el tamaño de la imagen al tamaño del elemento */
-    background-position: center;
-    /* Centra la imagen */
     display: inline-block;
-    width: 150px;
-    /* Establece el ancho deseado */
-    height: 100px;
-    /* Establece la altura deseada */
+    width: 100px;
+    height: 50px;
 }
+
 
 .menu a:hover {
     background-size: cover;
     background-position: center;
-    color:transparent;
+    color: transparent;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 768px) {
+    .columna-izquierda {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .columna-derecha {
+        width: 100%;
+    }
+
+    .formulario {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    .seccionportada {
+        border-radius: 20px;
+        padding: 10px;
+    }
+
+    .tituloprincipal {
+        font-size: 20px;
+    }
+
+    .formulario {
+        margin-top: 20px;
+    }
 }
