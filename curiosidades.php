@@ -15,47 +15,48 @@ if (!isset($_SESSION['user_id'])) {
     <title>Frikioda-curiosidades</title>
     <link rel="stylesheet" type="text/css" href="assets\css\pstyle.css" />
     <style>
-        body{
-            background-image: url('imagenes/curiosidades.jpg');
-            background-color: #cbeff4(255, 255, 255, 0,7); /* Ajusta el último valor para cambiar la opacidad */
-            background-blend-mode: overlay;
-            background-size: cover; /* Hace que la imagen cubra todo el área visible */
-            /* background-repeat: no-repeat; Evita que la imagen se repita */
-        }
+        .plainlinks {
+        background-image: url('imagenes/curiosidades.jpg');
+        background-color: rgba(203, 239, 244, 0.6); /* Ajusta el último valor para cambiar la opacidad */
+        background-blend-mode: overlay;
+        background-size: cover; /* Hace que la imagen cubra todo el área visible */
+        background-repeat: no-repeat; /* Evita que la imagen se repita */
+        border-radius: 25px;
+    }
         .otracosa {
         position: absolute;
-        top: 880px;
+        top: 960px;
         left: 120px;
         cursor: pointer;
         }
         .otracosa1 {
         position: absolute;
-        top: 880px;
-        left: 800px;
+        top: 960px;
+        left: 770px;
         cursor: pointer;
         }
         .otracosa2 {
         position: absolute;
-        top: 1100px;
+        top: 1180px;
         left: 120px;
         cursor: pointer;
         }
         .otracosa3 {
             position: absolute;
-            top: 1100px;
-            left: 800px;
+            top: 1180px;
+            left: 770px;
             cursor: pointer;
         }
         .otracosa4 {
             position: absolute;
-            top: 1320px;
+            top: 1400px;
             left: 120px;
             cursor: pointer;
         }
         .otracosa5 {
             position: absolute;
-            top: 1320px;
-            left: 800px;
+            top: 1400px;
+            left: 770px;
             cursor: pointer;
         }
 
@@ -171,9 +172,9 @@ if (!isset($_SESSION['user_id'])) {
                             <div class="seccionportada">
                                 <div class="tituloprincipal">
                                     <div><b>Datos curiosos y teorías</b></div>
-                                    <div>Esta información ha sido recabada por nakamas</div>
+                                    <div>La información ha sido recabada por nakamas</div>
                                 </div>
-                                <div class="plainlinks">
+                                <div class="plainlinks1" style=" background-position: center; font-weight: bold; padding: 20px;">
                                     <p>Esta sección nos mostrará los misterios e intringulis de la serie, las más viriopintas teorías que te dejarán sin aliento,
                                     One Piece, una obra que lleva alegrando nuestros corazones más de 25 años y con más de 1000 capítulos, pero, a que no sabias que
                                     Eiichiro Oda calculó que la serie duraría 5 años y que conforme iba transcuriendo ese tiempo comprobó que no había argumentado ni 
@@ -194,21 +195,21 @@ if (!isset($_SESSION['user_id'])) {
                     <div class="overlay" id="overlay">
                         <div class="text">El creador de One Piece pensó que Sanji se iba a llamar naruto, pero debido al comienzo de la serie del mismo nombre, Eiichiro tuvo que descartar esta opción por los derechos de autor adquiridos por Masashi Kishimoto.</div>
                     </div>
-                    <div class="texto-fijo"><b>¿Como crees que se iba a llamar originalmente Sanji?</b></div>
+                    <div class="texto-fijo" style=" border: 2px solid black; padding: 5px;"><b>¿Como crees que se iba a llamar originalmente Sanji?</b></div>
                 </div>
                 <div class="otracosa1" onclick="showText()">
                     <img src="imagenes\oliver levasseur.jpg" alt="Imagen" id="imagen">
                     <div class="overlay" id="overlay">
                         <div class="text">La ejecución de este personaje está basada en la muerte del pirata Olivier Levasseur que antes de su deceso, tiró al publico un collar con un mensaje encriptado que indicaba la ubicación de sus tesoros.</div>
                     </div>
-                    <div class="texto-fijo1"><b>La muerte de Gol D. Roger está basada en hechos reales</b></div>
+                    <div class="texto-fijo1" style=" border: 2px solid black; padding: 5px;"><b>La muerte de Gol D. Roger está basada en hechos reales</b></div>
                 </div>
                 <div class="otracosa2" onclick="showText()">
                     <img src="imagenes\cumple.jpg" alt="Imagen" id="imagen">
                     <div class="overlay" id="overlay">
                         <div class="text">Casi todos los personajes cumplen años siguiendo una norma, haciendo su fecha significativa, Ace es el personaje de One piece que cumple años exactamente el mismo día que Eiichiro Oda.</div>
                     </div>
-                    <div class="texto-fijo1"><b>¿Que personaje cumple años el mismo día que Eiichiro?</b></div>
+                    <div class="texto-fijo1" style=" border: 2px solid black; padding: 5px;"><b>¿Que personaje cumple años el mismo día que Eiichiro?</b></div>
                 </div>
 
                 <div class="otracosa3" onclick="showText()">
@@ -216,29 +217,43 @@ if (!isset($_SESSION['user_id'])) {
                     <div class="overlay" id="overlay">
                         <div class="text">El mangaca es muy fan de unos de los artistas musicales más famosos del mundo, estamos hablando efectivamente del rapero Eminen que tanto gusta al creador del anime.</div>
                     </div>
-                    <div class="texto-fijo1"><b>¿Que famoso rapero inspiró a Oda para crear a dios Enel?</b></div>
+                    <div class="texto-fijo1" style=" border: 2px solid black; padding: 5px;"><b>¿Que famoso rapero inspiró a Oda para crear a dios Enel?</b></div>
                 </div>
                 <div class="otracosa4" onclick="showText()">
-                    <img src="imagenes\One_Piecee.webp" alt="Imagen" id="imagen">
+                    <img src="imagenes\Dragon-Ball-Z-One-Piece-y-Toriko.jpg" alt="Imagen" id="imagen">
                     <div class="overlay" id="overlay">
-                        <div class="text">Tu texto aquí</div>
+                        <div class="text">El protagonista del anime Dragon Ball, Goku, realiza una aparición en el capitulo 590 de One Piece, emblemático momento grabado en los corazones de todos los fans de ambos animes</div>
                     </div>
-                    <div class="texto-fijo1">La muerte de Gol D. Roger está basada en echos reales</div>
+                    <div class="texto-fijo1" style=" border: 2px solid black; padding: 5px;"><b>El crossover más icónico de One Piece en el capítulo 590</b></div>
                 </div>
                 <div class="otracosa5" onclick="showText()">
                     <img src="imagenes\One_Piecee.webp" alt="Imagen" id="imagen">
                     <div class="overlay" id="overlay">
                         <div class="text">Tu texto aquí</div>
                     </div>
-                    <div class="texto-fijo1">La muerte de Gol D. Roger está basada en echos reales</div>
+                    <div class="texto-fijo1" style=" border: 2px solid black; padding: 5px;"><b>La muerte de Gol D. Roger está basada en echos reales</b></div>
                 </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<div class="teoría" style="position: absolute; top: 1600px;  text-align: center;">
+    <div style="border: 2px solid black; margin: 20px; padding: 20px;">
+        <h2 style="color: black;">Teoría conspiranoica sobre Usoop y Sogeking <br>¿Son la misma persona?</h2>
+        <b>Como sabemos en ocasiones, en la que la situacion se torna truculenta y complicada, Usoop muestra un alter ego llamado Sogueking que salva la situación, pero 
+        ¿es ussop realmente sogeking?  bajo la siguiente hipótesis, se puede argumentar que NO, o al menos parcialmente.
+        Usoop es un personaje que tiene miedo a cualquier momento que ponga en riesgo mínimamente su vida, sin embargo Sogueking, que de hecho, tiene la misma indumentaria,
+        es valiente, decidido y no le tiembla el pulso para afrontar los problemas, además de que tiene un tono de voz ligeramente diferente. Todo ello nos hace dudar 
+        que ambos sean la misma persona, pero entonces ¿quién es Sogeking?, en este punto tenemos dos vertientes:<br><br>
+        -1 Tal como vimos en el episodio en el que el Queen Merry llega al fin de sus días aparece un espíritu o alma del barco que ayuda a Usoop en varias ocasiones e incluso
+        se despide él cuando el barco comienza a arder, por lo tanto no sería descabellado afirmar que el alma del Merry posse a su amigo Usoop cuando es necesario.<br><br>
+        -2 Si comprobamos los parecidos razonables, la persona que podría estar detrás de la máscara, sería el propio padre de Usoop, Yasopp, un tirador consagrado y con bastantes
+        más experiencia, todo ello para redimirse de todos los años que tuvo abandonado a su hijo para cumplir su sueño de ser un gran pirata.</b>
+    </div>
+</div>
 
-
+</div>
 <script>
 //     function showText() {
 //     var overlay = document.getElementById("overlay");

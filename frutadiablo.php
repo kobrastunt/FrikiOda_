@@ -15,11 +15,11 @@ if (!isset($_SESSION['user_id'])) {
     <title>WikiOda, la enciclopedia de One piece </title>
     <link rel="stylesheet" type="text/css" href="assets\css\pstyle.css" />
     <style>
-        body{
+        /* body{
             background-image: url('imagenes/One_Piecee.webp');
-    background-color: #cbeff4(255, 255, 255, 1); /* Ajusta el último valor para cambiar la opacidad */
+    background-color: #cbeff4(255, 255, 255, 1); 
     background-blend-mode: overlay;
-        }
+        } */
     </style>
     <script>
         function principal() {
@@ -29,11 +29,16 @@ if (!isset($_SESSION['user_id'])) {
 <style>
     body {
         font-family: Arial, sans-serif;
+        
+    }
+
+    .plainlinks1 {
         background-image: url('imagenes/One-piece-frutas-del-diablo.webp');
-        background-color: rgba(203, 239, 244, 1); /* Ajusta el último valor para cambiar la opacidad */
+        background-color: rgba(203, 239, 244, 0.6); /* Ajusta el último valor para cambiar la opacidad */
         background-blend-mode: overlay;
         background-size: cover; /* Hace que la imagen cubra todo el área visible */
         background-repeat: no-repeat; /* Evita que la imagen se repita */
+        border-radius: 25px;
     }
 
     .container {
@@ -124,7 +129,7 @@ if (!isset($_SESSION['user_id'])) {
         </div>
     </div>
     <script src="script.js"></script>
-    <div class="plainlinks">
+    <div class="plainlinks1">
         <div id="globalWrapper">
             <div id="column-content">
                 <div id="content" class="mw-body" role="main">
@@ -139,12 +144,12 @@ if (!isset($_SESSION['user_id'])) {
                                         <div><b>La fascinante sección de las Frutas del Diablo</b></div>
                                         <div>¿Que tipo de Fruta del Diablo elegirías tú?</div>
                                     </div>
-                                    <div class="plainlinks">
-                                    <p>En el magnífico universo pirata de One Piece, estas frutas son elementos legendarios que otorgan diferentes poderes y habilidades realmente extraordinarias con la condición de pagar un alto precio.
+                                    <div class="plainlinks" style=" background-position: center; font-weight: bold; padding: 20px;">
+                                    <p><strong>En el magnífico universo pirata de One Piece, estas frutas son elementos legendarios que otorgan diferentes poderes y habilidades realmente extraordinarias con la condición de pagar un alto precio.
                                     Quien consume una de estas frutas tiene las desgracia de no poder nadar, algo muy a tener en cuenta si tus aventuras transcurren en un barco surcando los mares del mundo.
                                     <br>
                                     Hay Frutas de diferentes tipos con las que puedes adquirir poderes elementales hielo, fuego o otras que pueden manipular la percepcion del espacio/tiempo, convertirte en una bestia animal con una fuerza
-                                    sobrehumana o manipular la propia gravedad.</p>
+                                    sobrehumana o manipular la propia gravedad.</strong></p>
                                     </div>
                                 </div>
                             </div>

@@ -20,15 +20,20 @@ if (!isset($_SESSION['user_id'])) {
         }
     </script>
     <style>
+        
         body {
-            font-family: Arial, sans-serif;
-            background-image: url('imagenes/one-piece.webp');
-            background-color: rgba(203, 239, 244, 1);
-            background-blend-mode: overlay;
-            background-size: contain; /* Hace que la imagen cubra todo el área visible */
-            /* background-repeat: no-repeat; Evita que la imagen se repita */
-        }
+        font-family: Arial, sans-serif;
+        
+    }
 
+    .plainlinks1 {
+        background-image: url('imagenes/one-piece.webp');
+        background-color: rgba(203, 239, 244, 0.6); /* Ajusta el último valor para cambiar la opacidad */
+        background-blend-mode: overlay;
+        background-size: cover; /* Hace que la imagen cubra todo el área visible */
+        background-repeat: no-repeat; /* Evita que la imagen se repita */
+        border-radius: 25px;
+    }
         .container {
             display: flex;
             flex-wrap: wrap;
@@ -129,7 +134,7 @@ if (!isset($_SESSION['user_id'])) {
         </div>
     </div>
 
-    <div class="plainlinks">
+    <div class="plainlinks1">
         <div id="globalWrapper">
             <div id="column-content">
                 <div id="content" class="mw-body" role="main">
