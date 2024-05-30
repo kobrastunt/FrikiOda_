@@ -1,0 +1,224 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 22-05-2024 a las 21:28:02
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de datos: `wikioda`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `frutadiablo`
+--
+
+CREATE TABLE `frutadiablo` (
+  `id` int(11) NOT NULL,
+  `tipo` varchar(25) NOT NULL,
+  `nombre` varchar(30) NOT NULL,
+  `descripcion` varchar(500) NOT NULL,
+  `imagen` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `frutadiablo`
+--
+
+INSERT INTO `frutadiablo` (`id`, `tipo`, `nombre`, `descripcion`, `imagen`) VALUES
+(2, 'Paramecia', 'Fruta Gomu Gomu ', 'La persona que consume esta fruta adquiere la capacidad de contorsionar y estirar su cuerpo a voluntad, éstas características aportan inmunidad a daños de proyectiles o al elemento rayo dada su alta resistividad, aportando una gran ventaja en combate.', 'imagenes\\gomugomu.png'),
+(3, 'Paramecia', 'Fruta Bara Bara', 'Esta fruta te otorga la capacidad de dividir tu cuerpo en varias partes y controlar cada una de ellas independientemente, haciendo prácticamente inmune a los cortes con espadas. La fruta Bara Bara también concede el poder de la levitación aplicable a cada una de las partes del cuerpo. ', 'imagenes\\barabara.png'),
+(4, 'Logia', 'Fruta Mera Mera', 'Otorga a su consumidor la gran habilidad de convertir su cuerpo en llamas, crear fuego de la nada así como controlarlo a voluntad. aporta la capacidad de inmunizarte contra ataques físicos, imposibilitando los ataques con armas. \r\n', 'imagenes/meramera.png'),
+(5, 'Logia', 'Fruta Goro Goro', 'Permite transformar en electricidad a su consumidor, ello implica, una increíble velocidad de desplazamiento, la manipulación y control de este elemento, así como poder desarrollar increíbles descargas de voltaje que podría freír a casi cualquiera.', 'imagenes/Fruta_Goro_Goro.png'),
+(6, 'Logia', 'Fruta Moku Moku', 'Los poderes de esta fruta te permiten transformarte en humo, manipularlo a voluntad o crearlo. causa un efecto que también se observan en otra frutas de tipo Logia, la practica inmunidad a los ataques físicos o con armas. otra de sus virtudes es la posibilidad de volar dada la volatilidad del humo.', 'imagenes/moku_moku.png');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `personajes`
+--
+
+CREATE TABLE `personajes` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(200) NOT NULL,
+  `descripcion` varchar(500) NOT NULL,
+  `imagen` varchar(200) NOT NULL,
+  `gif` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `personajes`
+--
+
+INSERT INTO `personajes` (`id`, `nombre`, `descripcion`, `imagen`, `gif`) VALUES
+(1, 'Monkey D. Luffy', 'Es el protagonista de la serie de pequeño tuvo un evento que marcaría su deseo de ser el nuevo rey de los piratas, se comió una fruta del diablo gomu gomu.', 'imagenes\\monkeyDluffy.png', 'imagenes\\gif\\663107ea66958965347464.gif'),
+(2, 'Usoop', 'Este aventurero mentiroso compulsivo pero de buen corazón, es el francotirador de los Mugiwara, a menudo se presenta como Sogeking, su alter ego, más valiente y mayor dotado para la batalla.  ', 'imagenes\\Usopp.webp', 'imagenes\\gif\\usopp.gif'),
+(3, 'Roronoa Zoro', 'Es el espadachin de la banda, muy despistado y le encantata el bebercio y entrenar.', 'imagenes/Zoro.webp', 'imagenes/gif/superzoroo-unscreen.gif'),
+(4, 'Nami', 'Ella es la navegante del barco, le encantan los tesoros y roba cualquier objeto de valor a su alcance.', 'imagenes/nami.png', 'imagenes\\gif\\nami.gif'),
+(5, 'Sanji', 'Es el cocinero de los Muguiwaras, únicamente lucha con las piernas', 'imagenes/sanji.png', 'imagenes\\gif\\sanji.gif'),
+(6, 'Toni Chopper', 'Es un reno que adquiere la apariencia de un humano, tiene una fuerza descomunal y su principal labor es ejercer la medicina sanando a los miguiwaras de sus multiples heridas.', 'imagenes/toni_chopper.png', 'imagenes\\gif\\chopper.gif'),
+(7, 'Franky', 'Es un experto constructor de barcos, es muy hábil usando ataque con su misterioso cuerpo, pues es un cybor con armas ocultas, su poder unicamente funciona si usa refrescos de cola que mete en su cuerpo en una suerte de batería que despliega de su torso.', 'imagenes/Franky.png', 'imagenes\\gif\\franky.gif');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `publicaciones_foro`
+--
+
+CREATE TABLE `publicaciones_foro` (
+  `id` int(11) NOT NULL,
+  `usuario_id` int(11) NOT NULL,
+  `titulo` varchar(200) NOT NULL,
+  `contenido` text NOT NULL,
+  `fecha_publicacion` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `roles`
+--
+
+CREATE TABLE `roles` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `roles`
+--
+
+INSERT INTO `roles` (`id`, `name`) VALUES
+(1, 'admin'),
+(2, 'editor'),
+(3, 'viewer');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `password` varchar(200) NOT NULL,
+  `role_id` int(10) UNSIGNED DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `users`
+--
+
+INSERT INTO `users` (`id`, `email`, `password`, `role_id`) VALUES
+(1, 'serrano@ugr.es', '$2y$10$PwtFsruGfirvibIaNmjtCudUspQ0/hUEjYizcuTGT9tIj6FPcT3Ra', 1),
+(2, 'ro@ugr.es', '$2y$10$dqeigkejgQnQwFRZR29uXuOt9XfNLx9YPMFV1QBZHq4A6/N6p0.rO', 2),
+(5, 'raul@ugr.es', '$2y$10$U7U9TBnAotB6yRV/fjVU0eMbSXD8zSIzShU9Km/.diaZbK6ChqVji', 2),
+(6, 'jupi@ugr.es', '$2y$10$duwRpyUyO1iSLZiKlAkGDuBuquTOgTZvV3KPP9jqT841Hforarq4e', 1),
+(7, 'invitado@ugr.es', '$2y$10$oY3NOzJM84wxuW1w1crFWu5olwfvYcTnKwyrnqZnSvjo3S4ThXrxy', NULL);
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `frutadiablo`
+--
+ALTER TABLE `frutadiablo`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `personajes`
+--
+ALTER TABLE `personajes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `publicaciones_foro`
+--
+ALTER TABLE `publicaciones_foro`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `usuario_id` (`usuario_id`);
+
+--
+-- Indices de la tabla `roles`
+--
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `name` (`name`);
+
+--
+-- Indices de la tabla `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_roles` (`role_id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `frutadiablo`
+--
+ALTER TABLE `frutadiablo`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de la tabla `personajes`
+--
+ALTER TABLE `personajes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT de la tabla `publicaciones_foro`
+--
+ALTER TABLE `publicaciones_foro`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `roles`
+--
+ALTER TABLE `roles`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `publicaciones_foro`
+--
+ALTER TABLE `publicaciones_foro`
+  ADD CONSTRAINT `publicaciones_foro_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `users` (`id`);
+
+--
+-- Filtros para la tabla `users`
+--
+ALTER TABLE `users`
+  ADD CONSTRAINT `fk_roles` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

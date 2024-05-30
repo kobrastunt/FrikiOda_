@@ -56,7 +56,7 @@ if (!isset($_SESSION['user_id'])) {
         .otracosa5 {
             position: absolute;
             top: 1400px;
-            left: 770px;
+            left: 760px;
             cursor: pointer;
         }
 
@@ -76,23 +76,23 @@ if (!isset($_SESSION['user_id'])) {
             display: block;
         }
         .otracosa1:hover .overlay {
-            transform: translateX(0); /* Mostrar el texto al pasar el ratón sobre la imagen */
+            transform: translateX(0); 
             display: block;
         }
         .otracosa2:hover .overlay {
-            transform: translateX(0); /* Mostrar el texto al pasar el ratón sobre la imagen */
+            transform: translateX(0); 
             display: block;
         }
         .otracosa3:hover .overlay {
-            transform: translateX(0); /* Mostrar el texto al pasar el ratón sobre la imagen */
+            transform: translateX(0); 
             display: block;
         }
         .otracosa4:hover .overlay {
-            transform: translateX(0); /* Mostrar el texto al pasar el ratón sobre la imagen */
+            transform: translateX(0); 
             display: block;
         }
         .otracosa5:hover .overlay {
-            transform: translateX(0); /* Mostrar el texto al pasar el ratón sobre la imagen */
+            transform: translateX(0); 
             display: block;
         }
 
@@ -229,9 +229,9 @@ if (!isset($_SESSION['user_id'])) {
                 <div class="otracosa5" onclick="showText()">
                     <img src="imagenes\One_Piecee.webp" alt="Imagen" id="imagen">
                     <div class="overlay" id="overlay">
-                        <div class="text">Tu texto aquí</div>
+                        <div class="text">Como sabemmos Zoro tiene muy mala orientación y el motivo de que siempre esté perdiendose es debido a la adquisición de la katana Sandey Kaitetshu sobre la que pesa una maldición, Katana que adquirió en Loguetow</div>
                     </div>
-                    <div class="texto-fijo1" style=" border: 2px solid black; padding: 5px;"><b>La muerte de Gol D. Roger está basada en echos reales</b></div>
+                    <div class="texto-fijo1" style=" border: 2px solid black; padding: 5px;"><b>¿Por que Zoro Ronoa tiene tan mala orientación y se pierde?</b></div>
                 </div>
                 </div>
             </div>

@@ -40,6 +40,23 @@ body{
     background-color: #fff;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
+.formulario{
+    float: ;
+    width: 40%;
+background-color: rgba(87, 150, 234, 0.8);
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    color: #000;
+    padding: 10px;
+    margin-bottom: 30px;
+    margin-right: 10px;
+    margin-left: 0px;
+    margin-top: 20px;
+}
+
+.item{
+    background-color: rgba(87, 150, 234, 0.8);
+}
         </style>
     <header>
         <h1>Productos One Piece</h1>

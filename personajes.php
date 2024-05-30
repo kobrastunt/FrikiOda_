@@ -45,7 +45,7 @@ if (!isset($_SESSION['user_id'])) {
             width: 30%;
             margin: 10px;
             padding: 10px;
-            background-color: #ffffff;
+            background-color: rgba(87, 150, 234, 0.8);
             border: 1px solid #0000FF;
             border-radius: 5px;
             text-align: center;
@@ -150,11 +150,11 @@ if (!isset($_SESSION['user_id'])) {
                                         <div>La tripulación de los Sombreros de Paja</div>
                                     </div>
                                     <div class="plainlinks">
-                                        <p>"En esta emocionante sección presentaremos a los famosos piratas capitaneados por nuestro personaje favorito Monkey D. Luffy.
+                                        <p><b>"En esta emocionante sección presentaremos a los famosos piratas capitaneados por nuestro personaje favorito Monkey D. Luffy.
                                             Cada uno de los personajes del anime tienen su proposito personal, contribuyendo conjuntamente entre ellos y complementando
                                             sus caracteristicas y habilidades.
                                             La tripulación dispone de un capitán, un francotirador, un espadachín, una navegante, un cocinero, un médico, una arqueóloga,
-                                            un constructor y un músico, sin olvidar el medio de transporte que utilizan nuestros protagonistas haciendo un homenaje al Queen Merry.
+                                            un constructor y un músico, sin olvidar el medio de transporte que utilizan nuestros protagonistas haciendo un homenaje al Queen Merry.</b>
 
                                         </p>
                                     </div>

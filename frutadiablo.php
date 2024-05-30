@@ -33,8 +33,8 @@ if (!isset($_SESSION['user_id'])) {
     }
 
     .plainlinks1 {
-        background-image: url('imagenes/One-piece-frutas-del-diablo.webp');
-        background-color: rgba(203, 239, 244, 0.6); /* Ajusta el último valor para cambiar la opacidad */
+        background-image: url('imagenes/one-piece-frutas-diablo.webp');
+        background-color: rgba(203, 239, 244, 0.4); /* Ajusta el último valor para cambiar la opacidad */
         background-blend-mode: overlay;
         background-size: cover; /* Hace que la imagen cubra todo el área visible */
         background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -45,6 +45,7 @@ if (!isset($_SESSION['user_id'])) {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
+        background-color: rgba(203, 239, 244, 0.4);
     }
 
     .character {
@@ -52,7 +53,7 @@ if (!isset($_SESSION['user_id'])) {
             width: 30%;
             margin: 10px;
             padding: 10px;
-            background-color: #ffffff;
+            background-color: rgba(87, 150, 234, 0.8);
             border: 1px solid #0000FF;
             border-radius: 5px;
             text-align: center;
@@ -72,7 +73,7 @@ if (!isset($_SESSION['user_id'])) {
         transform: scale(1.2); /* Aplica un efecto de escala al hacer hover sobre la imagen */
     }
     .character h2 {
-        color: rgba(29, 227, 187); /* Color de texto del nombre */
+        color: #000000; /* Color de texto del nombre */
     }
     .character h3 {
         color: #140b81; /* Color de texto del nombre */
@@ -144,12 +145,12 @@ if (!isset($_SESSION['user_id'])) {
                                         <div><b>La fascinante sección de las Frutas del Diablo</b></div>
                                         <div>¿Que tipo de Fruta del Diablo elegirías tú?</div>
                                     </div>
-                                    <div class="plainlinks" style=" background-position: center; font-weight: bold; padding: 20px;">
-                                    <p><strong>En el magnífico universo pirata de One Piece, estas frutas son elementos legendarios que otorgan diferentes poderes y habilidades realmente extraordinarias con la condición de pagar un alto precio.
+                                    <div class="plainlinks" style=" background-position: center; padding: 20px;">
+                                    <p><b>En el magnífico universo pirata de One Piece, estas frutas son elementos legendarios que otorgan diferentes poderes y habilidades realmente extraordinarias con la condición de pagar un alto precio.
                                     Quien consume una de estas frutas tiene las desgracia de no poder nadar, algo muy a tener en cuenta si tus aventuras transcurren en un barco surcando los mares del mundo.
                                     <br>
                                     Hay Frutas de diferentes tipos con las que puedes adquirir poderes elementales hielo, fuego o otras que pueden manipular la percepcion del espacio/tiempo, convertirte en una bestia animal con una fuerza
-                                    sobrehumana o manipular la propia gravedad.</strong></p>
+                                    sobrehumana o manipular la propia gravedad.</b></p>
                                     </div>
                                 </div>
                             </div>

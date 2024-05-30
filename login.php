@@ -64,6 +64,16 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
     <title>Login</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+    form{
+    background-image:url("imagenes/titulo.png") ;
+    /* background-size: cover;  */
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-position: center; 
+    /* background-size: 100%; Reduce el tamaño de la imagen al 50% de su tamaño original */
+}
+</style>
 </head>
 <body>
     <?php require 'partials/header.php' ?>

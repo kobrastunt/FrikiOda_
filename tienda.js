@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const btnsAddToCart = document.querySelectorAll('.info-product button');
-    const btnWhatsApp = document.querySelector('a[href="https://wa.me/34667810705/?text=Hola,%20Wikioda%20escribo%20para%20realizarle%20la%20siguiente%20pregunta:"]');
+    const btnWhatsApp = document.querySelector('a[href^="https://wa.me/"]');
     const btnCart = document.querySelector('.container-icon');
     const containerCartProducts = document.querySelector('.container-cart-products');
     const contadorProductos = document.getElementById('contador-productos');
@@ -9,12 +9,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function crearMensaje() {
         let mensaje = '¡Hola! Quiero ordenar los siguientes productos:';
+        let total = 0;
+
         productosEnCarrito.forEach((producto, index) => {
             mensaje += `\n${index + 1}. ${producto.nombre} - Precio: ${producto.precio}`;
             if (producto.talla) {
                 mensaje += ` - Talla: ${producto.talla}`;
             }
+            mensaje += `\nImagen: ${producto.imagen}`;
+            total += parseFloat(producto.precio.replace('€', ''));
         });
+
+        mensaje += `\n\nPrecio total: €${total.toFixed(2)}`;
+        mensaje += `\n\nMuchas gracias por enviar los detalles de su pedido, por favor, realice un Bizum con el precio total del pedido, para que su paquete sea enviado. Si no dispone de Bizum, indíquenoslo para enviarle nuestro número de cuenta para que pueda realizar una transferencia.`;
         return mensaje;
     }
 
@@ -23,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const nombreProducto = producto.querySelector('.info-product h2').textContent;
         const precioProducto = producto.querySelector('.info-product .price').textContent;
         const talla = producto.querySelector('.info-product select') ? producto.querySelector('.info-product select').value : '';
+        const imagenProducto = producto.querySelector('figure img').src;
 
         const productoExistente = productosEnCarrito.find(item => item.nombre === nombreProducto && item.talla === talla);
         if (productoExistente) {
@@ -30,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        productosEnCarrito.push({ nombre: nombreProducto, precio: precioProducto, talla: talla });
+        productosEnCarrito.push({ nombre: nombreProducto, precio: precioProducto, talla: talla, imagen: imagenProducto });
 
         const nuevoProducto = document.createElement('div');
         nuevoProducto.classList.add('cart-product');
@@ -40,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p class="titulo-producto-carrito">${nombreProducto}</p>
                 <span class="talla-producto-carrito">${talla ? 'Talla: ' + talla : ''}</span>
                 <span class="precio-producto-carrito">${precioProducto}</span>
+                <img src="${imagenProducto}" alt="${nombreProducto}" class="imagen-producto-carrito" style="width: 50px; height: auto;">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-close">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
@@ -52,6 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
         contadorProductos.textContent = parseInt(contadorProductos.textContent) + 1;
 
         calcularTotal();
+        actualizarMensajeWhatsApp();
     }
 
     btnsAddToCart.forEach(btn => {
@@ -68,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
         producto.remove();
         contadorProductos.textContent = parseInt(contadorProductos.textContent) - 1;
         calcularTotal();
+        actualizarMensajeWhatsApp();
     }
 
     document.addEventListener('click', function(event) {
