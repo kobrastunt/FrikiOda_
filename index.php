@@ -103,10 +103,19 @@
                 }
             ?>
         </div>
-        <audio controls autoplay style="padding: 22px;">
-            <!-- <source src="one piece cancion de pelea_VBG3VLthdpg.mp3" type="audio/mpeg"> -->
+        <audio id="miAudio" controls autoplay style="padding: 22px;">
+            <source src="One Piece OST — The Very, Very, Strongest_nUBWp89ATE8.mp3" type="audio/mpeg">
         </audio>
     </div>
+    <script>
+        // Espera a que la página se haya cargado completamente
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obtiene el elemento de audio
+            var audio = document.getElementById('miAudio');
+            // Establece el volumen por defecto (entre 0.0 y 1.0)
+            audio.volume = 0.1; // 50% del volumen máximo
+        });
+    </script>
     <div class="plainlinks1">
     <div id="globalWrapper">
         <div id="column-content">
@@ -121,11 +130,11 @@
                     </div>
                     <div class="plainlinks">
                         <p><b>"Bienvenido a Frikioda: Tu aplicación web sobre One Piece.
-                        Frikioda es el lugar ideal para explorar y disfrutar todo sobre One Piece, la icónica serie de anime y manga del legendario <a href="eichirooda.php" title="autor Eiichiro">Eiichiro Oda</a>.
+                        Frikioda es el lugar ideal para explorar y disfrutar todo sobre One Piece, la icónica serie de anime y manga del legendario<?php if(isset($_SESSION['user_role'])) { ?><a href="eichirooda.php" title="autor Eiichiro"> Eiichiro Oda<?php } else { ?> Eiichiro Oda<?php } ?></a>.
                         Esta aplicación te permitirá explorar el apasionante mundo de One Piece.
                         <br></br>
-                        Frikioda tiene todo lo que necesitas para satisfacer tu pasión por la serie, desde información detallada sobre los <a href="personajes.php" title="personajes"> personajes principales</a> y las 
-                        misteriosas <?php if(isset($_SESSION['user_role'])) { ?><a href="frutadiablo.php" title="las frutas del diablo">Frutas del Diablo<?php } else { ?>Fruta del diablo<?php } ?></a> hasta <a href="curiosidades.php" title="curiosidades"> fascinantes curiosidades</a> sobre la serie y una conmovedora biografía del autor.
+                        Frikioda tiene todo lo que necesitas para satisfacer tu pasión por la serie, desde información detallada sobre los <?php if(isset($_SESSION['user_role'])) { ?><a href="personajes.php" title="personajes"> personajes principales<?php } else { ?>personajes principales <?php } ?></a> y las 
+                        misteriosas <?php if(isset($_SESSION['user_role'])) { ?><a href="frutadiablo.php" title="las frutas del diablo">Frutas del Diablo,<?php } else { ?>Frutas del diablo, <?php } ?></a> hasta <?php if(isset($_SESSION['user_role'])) { ?><a href="curiosidades.php" title="curiosidades"> fascinantes curiosidades<?php } else { ?> fancinantes curiosidades<?php } ?></a> sobre la serie y una conmovedora biografía del autor.
                         No te pierdas nuestra exclusiva tienda online con una selección de artículos de alta calidad especialmente para los fans de One Piece.
                         Descubre, vive y participa en frikioda"</b></p>
                         <a href="https://api.whatsapp.com/send/?phone=34667810705&text=Hola%20tengo%20una%20consulta%20o%20teoría%20que%20me%20gustaría%20compartir&type=phone_number&app_absent=0" class="boton">Si tienes alguna consulta o teoría escríbenos por WhatsApp</a>

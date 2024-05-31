@@ -1,3 +1,3 @@
 <header>
-    <a href="/php-login">WIKIODA</a>
+    <a href="/php-login">FRIKIODA</a>
 </header>
